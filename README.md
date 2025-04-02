@@ -26,7 +26,9 @@ The full API of this library can be found in [api.md](api.md).
 ```python
 from hubmap_search_sdk import HubmapSearchSDK
 
-client = HubmapSearchSDK()
+client = HubmapSearchSDK(
+    bearer_token="My Bearer Token",
+)
 
 indices = client.indices.list()
 print(indices.indices)
@@ -40,7 +42,9 @@ Simply import `AsyncHubmapSearchSDK` instead of `HubmapSearchSDK` and use `await
 import asyncio
 from hubmap_search_sdk import AsyncHubmapSearchSDK
 
-client = AsyncHubmapSearchSDK()
+client = AsyncHubmapSearchSDK(
+    bearer_token="My Bearer Token",
+)
 
 
 async def main() -> None:
