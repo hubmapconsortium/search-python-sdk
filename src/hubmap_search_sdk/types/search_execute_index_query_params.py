@@ -11,10 +11,6 @@ __all__ = ["SearchExecuteIndexQueryParams"]
 
 class SearchExecuteIndexQueryParams(TypedDict, total=False):
     body: Required[object]
-    """
-    JSON that describes an Elasticsearch
-    [DSL query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html)
-    """
 
     produce_clt_manifest: Annotated[str, PropertyInfo(alias="produce-clt-manifest")]
     """
