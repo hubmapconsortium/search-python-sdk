@@ -62,12 +62,9 @@ class SearchResource(SyncAPIResource):
         [Elasticsearch Query DSL statement](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-your-data.html) 2)
         a bearer token in the Authorization header supplied by HuBMAP. Results are
         limited to those authorized by the bearer token. Uses the
-        <strong>hm_consortium_entities</strong> index by default.
+        <strong>entities</strong> index by default.
 
         Args:
-          body: JSON that describes an Elasticsearch
-              [DSL query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html)
-
           produce_clt_manifest: An optional parameter that, when set to "true", will make the endpoint return a
               text representation of a manifest file that corresponds with the datasets
               queried rather than the original response
@@ -116,12 +113,9 @@ class SearchResource(SyncAPIResource):
         [Elasticsearch Query DSL statement](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-your-data.html) 2)
         a bearer token in the Authorization header supplied by HuBMAP. Results are
         limited to those authorized by the bearer token. Uses the
-        <strong>hm_consortium_entities</strong> index by default.
+        <strong>entities</strong> index by default.
 
         Args:
-          body: JSON that describes an Elasticsearch
-              [DSL query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html)
-
           produce_clt_manifest: An optional parameter that, when set to "true", will make the endpoint return a
               text representation of a manifest file that corresponds with the datasets
               queried rather than the original response
@@ -189,12 +183,9 @@ class AsyncSearchResource(AsyncAPIResource):
         [Elasticsearch Query DSL statement](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-your-data.html) 2)
         a bearer token in the Authorization header supplied by HuBMAP. Results are
         limited to those authorized by the bearer token. Uses the
-        <strong>hm_consortium_entities</strong> index by default.
+        <strong>entities</strong> index by default.
 
         Args:
-          body: JSON that describes an Elasticsearch
-              [DSL query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html)
-
           produce_clt_manifest: An optional parameter that, when set to "true", will make the endpoint return a
               text representation of a manifest file that corresponds with the datasets
               queried rather than the original response
@@ -243,12 +234,9 @@ class AsyncSearchResource(AsyncAPIResource):
         [Elasticsearch Query DSL statement](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-your-data.html) 2)
         a bearer token in the Authorization header supplied by HuBMAP. Results are
         limited to those authorized by the bearer token. Uses the
-        <strong>hm_consortium_entities</strong> index by default.
+        <strong>entities</strong> index by default.
 
         Args:
-          body: JSON that describes an Elasticsearch
-              [DSL query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html)
-
           produce_clt_manifest: An optional parameter that, when set to "true", will make the endpoint return a
               text representation of a manifest file that corresponds with the datasets
               queried rather than the original response
