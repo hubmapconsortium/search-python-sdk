@@ -13,7 +13,6 @@ from ._qs import Querystring
 from ._types import (
     NOT_GIVEN,
     Omit,
-    Headers,
     Timeout,
     NotGiven,
     Transport,
@@ -25,7 +24,7 @@ from ._utils import (
     get_async_library,
 )
 from ._version import __version__
-from .resources import search, indices, reindex, param_search
+from .resources import add, mget, search, update, indices, mapping, reindex, clear_docs, param_search, scroll_search
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import APIStatusError
 from ._base_client import (
@@ -51,16 +50,22 @@ class HubmapSearchSDK(SyncAPIClient):
     search: search.SearchResource
     param_search: param_search.ParamSearchResource
     reindex: reindex.ReindexResource
+    mget: mget.MgetResource
+    mapping: mapping.MappingResource
+    update: update.UpdateResource
+    add: add.AddResource
+    clear_docs: clear_docs.ClearDocsResource
+    scroll_search: scroll_search.ScrollSearchResource
     with_raw_response: HubmapSearchSDKWithRawResponse
     with_streaming_response: HubmapSearchSDKWithStreamedResponse
 
     # client options
-    api_key: str | None
+    bearer_token: str | None
 
     def __init__(
         self,
         *,
-        api_key: str | None = None,
+        bearer_token: str | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: Union[float, Timeout, None, NotGiven] = NOT_GIVEN,
         max_retries: int = DEFAULT_MAX_RETRIES,
@@ -80,13 +85,8 @@ class HubmapSearchSDK(SyncAPIClient):
         # part of our public interface in the future.
         _strict_response_validation: bool = False,
     ) -> None:
-        """Construct a new synchronous HubmapSearchSDK client instance.
-
-        This automatically infers the `api_key` argument from the `HUBMAP_SEARCH_SDK_API_KEY` environment variable if it is not provided.
-        """
-        if api_key is None:
-            api_key = os.environ.get("HUBMAP_SEARCH_SDK_API_KEY")
-        self.api_key = api_key
+        """Construct a new synchronous HubmapSearchSDK client instance."""
+        self.bearer_token = bearer_token
 
         if base_url is None:
             base_url = os.environ.get("HUBMAP_SEARCH_SDK_BASE_URL")
@@ -108,6 +108,12 @@ class HubmapSearchSDK(SyncAPIClient):
         self.search = search.SearchResource(self)
         self.param_search = param_search.ParamSearchResource(self)
         self.reindex = reindex.ReindexResource(self)
+        self.mget = mget.MgetResource(self)
+        self.mapping = mapping.MappingResource(self)
+        self.update = update.UpdateResource(self)
+        self.add = add.AddResource(self)
+        self.clear_docs = clear_docs.ClearDocsResource(self)
+        self.scroll_search = scroll_search.ScrollSearchResource(self)
         self.with_raw_response = HubmapSearchSDKWithRawResponse(self)
         self.with_streaming_response = HubmapSearchSDKWithStreamedResponse(self)
 
@@ -118,14 +124,6 @@ class HubmapSearchSDK(SyncAPIClient):
 
     @property
     @override
-    def auth_headers(self) -> dict[str, str]:
-        api_key = self.api_key
-        if api_key is None:
-            return {}
-        return {"Authorization": f"Bearer {api_key}"}
-
-    @property
-    @override
     def default_headers(self) -> dict[str, str | Omit]:
         return {
             **super().default_headers,
@@ -133,21 +131,10 @@ class HubmapSearchSDK(SyncAPIClient):
             **self._custom_headers,
         }
 
-    @override
-    def _validate_headers(self, headers: Headers, custom_headers: Headers) -> None:
-        if self.api_key and headers.get("Authorization"):
-            return
-        if isinstance(custom_headers.get("Authorization"), Omit):
-            return
-
-        raise TypeError(
-            '"Could not resolve authentication method. Expected the api_key to be set. Or for the `Authorization` headers to be explicitly omitted"'
-        )
-
     def copy(
         self,
         *,
-        api_key: str | None = None,
+        bearer_token: str | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: float | Timeout | None | NotGiven = NOT_GIVEN,
         http_client: httpx.Client | None = None,
@@ -181,7 +168,7 @@ class HubmapSearchSDK(SyncAPIClient):
 
         http_client = http_client or self._client
         return self.__class__(
-            api_key=api_key or self.api_key,
+            bearer_token=bearer_token or self.bearer_token,
             base_url=base_url or self.base_url,
             timeout=self.timeout if isinstance(timeout, NotGiven) else timeout,
             http_client=http_client,
@@ -234,16 +221,22 @@ class AsyncHubmapSearchSDK(AsyncAPIClient):
     search: search.AsyncSearchResource
     param_search: param_search.AsyncParamSearchResource
     reindex: reindex.AsyncReindexResource
+    mget: mget.AsyncMgetResource
+    mapping: mapping.AsyncMappingResource
+    update: update.AsyncUpdateResource
+    add: add.AsyncAddResource
+    clear_docs: clear_docs.AsyncClearDocsResource
+    scroll_search: scroll_search.AsyncScrollSearchResource
     with_raw_response: AsyncHubmapSearchSDKWithRawResponse
     with_streaming_response: AsyncHubmapSearchSDKWithStreamedResponse
 
     # client options
-    api_key: str | None
+    bearer_token: str | None
 
     def __init__(
         self,
         *,
-        api_key: str | None = None,
+        bearer_token: str | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: Union[float, Timeout, None, NotGiven] = NOT_GIVEN,
         max_retries: int = DEFAULT_MAX_RETRIES,
@@ -263,13 +256,8 @@ class AsyncHubmapSearchSDK(AsyncAPIClient):
         # part of our public interface in the future.
         _strict_response_validation: bool = False,
     ) -> None:
-        """Construct a new async AsyncHubmapSearchSDK client instance.
-
-        This automatically infers the `api_key` argument from the `HUBMAP_SEARCH_SDK_API_KEY` environment variable if it is not provided.
-        """
-        if api_key is None:
-            api_key = os.environ.get("HUBMAP_SEARCH_SDK_API_KEY")
-        self.api_key = api_key
+        """Construct a new async AsyncHubmapSearchSDK client instance."""
+        self.bearer_token = bearer_token
 
         if base_url is None:
             base_url = os.environ.get("HUBMAP_SEARCH_SDK_BASE_URL")
@@ -291,6 +279,12 @@ class AsyncHubmapSearchSDK(AsyncAPIClient):
         self.search = search.AsyncSearchResource(self)
         self.param_search = param_search.AsyncParamSearchResource(self)
         self.reindex = reindex.AsyncReindexResource(self)
+        self.mget = mget.AsyncMgetResource(self)
+        self.mapping = mapping.AsyncMappingResource(self)
+        self.update = update.AsyncUpdateResource(self)
+        self.add = add.AsyncAddResource(self)
+        self.clear_docs = clear_docs.AsyncClearDocsResource(self)
+        self.scroll_search = scroll_search.AsyncScrollSearchResource(self)
         self.with_raw_response = AsyncHubmapSearchSDKWithRawResponse(self)
         self.with_streaming_response = AsyncHubmapSearchSDKWithStreamedResponse(self)
 
@@ -301,14 +295,6 @@ class AsyncHubmapSearchSDK(AsyncAPIClient):
 
     @property
     @override
-    def auth_headers(self) -> dict[str, str]:
-        api_key = self.api_key
-        if api_key is None:
-            return {}
-        return {"Authorization": f"Bearer {api_key}"}
-
-    @property
-    @override
     def default_headers(self) -> dict[str, str | Omit]:
         return {
             **super().default_headers,
@@ -316,21 +302,10 @@ class AsyncHubmapSearchSDK(AsyncAPIClient):
             **self._custom_headers,
         }
 
-    @override
-    def _validate_headers(self, headers: Headers, custom_headers: Headers) -> None:
-        if self.api_key and headers.get("Authorization"):
-            return
-        if isinstance(custom_headers.get("Authorization"), Omit):
-            return
-
-        raise TypeError(
-            '"Could not resolve authentication method. Expected the api_key to be set. Or for the `Authorization` headers to be explicitly omitted"'
-        )
-
     def copy(
         self,
         *,
-        api_key: str | None = None,
+        bearer_token: str | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: float | Timeout | None | NotGiven = NOT_GIVEN,
         http_client: httpx.AsyncClient | None = None,
@@ -364,7 +339,7 @@ class AsyncHubmapSearchSDK(AsyncAPIClient):
 
         http_client = http_client or self._client
         return self.__class__(
-            api_key=api_key or self.api_key,
+            bearer_token=bearer_token or self.bearer_token,
             base_url=base_url or self.base_url,
             timeout=self.timeout if isinstance(timeout, NotGiven) else timeout,
             http_client=http_client,
@@ -418,6 +393,12 @@ class HubmapSearchSDKWithRawResponse:
         self.search = search.SearchResourceWithRawResponse(client.search)
         self.param_search = param_search.ParamSearchResourceWithRawResponse(client.param_search)
         self.reindex = reindex.ReindexResourceWithRawResponse(client.reindex)
+        self.mget = mget.MgetResourceWithRawResponse(client.mget)
+        self.mapping = mapping.MappingResourceWithRawResponse(client.mapping)
+        self.update = update.UpdateResourceWithRawResponse(client.update)
+        self.add = add.AddResourceWithRawResponse(client.add)
+        self.clear_docs = clear_docs.ClearDocsResourceWithRawResponse(client.clear_docs)
+        self.scroll_search = scroll_search.ScrollSearchResourceWithRawResponse(client.scroll_search)
 
 
 class AsyncHubmapSearchSDKWithRawResponse:
@@ -426,6 +407,12 @@ class AsyncHubmapSearchSDKWithRawResponse:
         self.search = search.AsyncSearchResourceWithRawResponse(client.search)
         self.param_search = param_search.AsyncParamSearchResourceWithRawResponse(client.param_search)
         self.reindex = reindex.AsyncReindexResourceWithRawResponse(client.reindex)
+        self.mget = mget.AsyncMgetResourceWithRawResponse(client.mget)
+        self.mapping = mapping.AsyncMappingResourceWithRawResponse(client.mapping)
+        self.update = update.AsyncUpdateResourceWithRawResponse(client.update)
+        self.add = add.AsyncAddResourceWithRawResponse(client.add)
+        self.clear_docs = clear_docs.AsyncClearDocsResourceWithRawResponse(client.clear_docs)
+        self.scroll_search = scroll_search.AsyncScrollSearchResourceWithRawResponse(client.scroll_search)
 
 
 class HubmapSearchSDKWithStreamedResponse:
@@ -434,6 +421,12 @@ class HubmapSearchSDKWithStreamedResponse:
         self.search = search.SearchResourceWithStreamingResponse(client.search)
         self.param_search = param_search.ParamSearchResourceWithStreamingResponse(client.param_search)
         self.reindex = reindex.ReindexResourceWithStreamingResponse(client.reindex)
+        self.mget = mget.MgetResourceWithStreamingResponse(client.mget)
+        self.mapping = mapping.MappingResourceWithStreamingResponse(client.mapping)
+        self.update = update.UpdateResourceWithStreamingResponse(client.update)
+        self.add = add.AddResourceWithStreamingResponse(client.add)
+        self.clear_docs = clear_docs.ClearDocsResourceWithStreamingResponse(client.clear_docs)
+        self.scroll_search = scroll_search.ScrollSearchResourceWithStreamingResponse(client.scroll_search)
 
 
 class AsyncHubmapSearchSDKWithStreamedResponse:
@@ -442,6 +435,12 @@ class AsyncHubmapSearchSDKWithStreamedResponse:
         self.search = search.AsyncSearchResourceWithStreamingResponse(client.search)
         self.param_search = param_search.AsyncParamSearchResourceWithStreamingResponse(client.param_search)
         self.reindex = reindex.AsyncReindexResourceWithStreamingResponse(client.reindex)
+        self.mget = mget.AsyncMgetResourceWithStreamingResponse(client.mget)
+        self.mapping = mapping.AsyncMappingResourceWithStreamingResponse(client.mapping)
+        self.update = update.AsyncUpdateResourceWithStreamingResponse(client.update)
+        self.add = add.AsyncAddResourceWithStreamingResponse(client.add)
+        self.clear_docs = clear_docs.AsyncClearDocsResourceWithStreamingResponse(client.clear_docs)
+        self.scroll_search = scroll_search.AsyncScrollSearchResourceWithStreamingResponse(client.scroll_search)
 
 
 Client = HubmapSearchSDK

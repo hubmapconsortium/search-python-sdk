@@ -24,34 +24,23 @@ pip install --pre hubmap_search_sdk
 The full API of this library can be found in [api.md](api.md).
 
 ```python
-import os
 from hubmap_search_sdk import HubmapSearchSDK
 
-client = HubmapSearchSDK(
-    api_key=os.environ.get("HUBMAP_SEARCH_SDK_API_KEY"),  # This is the default and can be omitted
-)
+client = HubmapSearchSDK()
 
 indices = client.indices.list()
 print(indices.indices)
 ```
-
-While you can provide an `api_key` keyword argument,
-we recommend using [python-dotenv](https://pypi.org/project/python-dotenv/)
-to add `HUBMAP_SEARCH_SDK_API_KEY="My API Key"` to your `.env` file
-so that your API Key is not stored in source control.
 
 ## Async usage
 
 Simply import `AsyncHubmapSearchSDK` instead of `HubmapSearchSDK` and use `await` with each API call:
 
 ```python
-import os
 import asyncio
 from hubmap_search_sdk import AsyncHubmapSearchSDK
 
-client = AsyncHubmapSearchSDK(
-    api_key=os.environ.get("HUBMAP_SEARCH_SDK_API_KEY"),  # This is the default and can be omitted
-)
+client = AsyncHubmapSearchSDK()
 
 
 async def main() -> None:

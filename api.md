@@ -40,3 +40,62 @@ Methods:
 Methods:
 
 - <code title="put /reindex/{identifier}">client.reindex.<a href="./src/hubmap_search_sdk/resources/reindex.py">update</a>(identifier) -> None</code>
+
+# Mget
+
+Types:
+
+```python
+from hubmap_search_sdk.types import (
+    MgetRetrieveMultipleResponse,
+    MgetRetrieveMultipleByIndexResponse,
+)
+```
+
+Methods:
+
+- <code title="post /mget">client.mget.<a href="./src/hubmap_search_sdk/resources/mget.py">retrieve_multiple</a>(\*\*<a href="src/hubmap_search_sdk/types/mget_retrieve_multiple_params.py">params</a>) -> <a href="./src/hubmap_search_sdk/types/mget_retrieve_multiple_response.py">object</a></code>
+- <code title="post /{index_name}/mget">client.mget.<a href="./src/hubmap_search_sdk/resources/mget.py">retrieve_multiple_by_index</a>(index_name, \*\*<a href="src/hubmap_search_sdk/types/mget_retrieve_multiple_by_index_params.py">params</a>) -> <a href="./src/hubmap_search_sdk/types/mget_retrieve_multiple_by_index_response.py">object</a></code>
+
+# Mapping
+
+Types:
+
+```python
+from hubmap_search_sdk.types import MappingRetrieveDefaultResponse, MappingRetrieveIndexResponse
+```
+
+Methods:
+
+- <code title="get /mapping">client.mapping.<a href="./src/hubmap_search_sdk/resources/mapping.py">retrieve_default</a>() -> <a href="./src/hubmap_search_sdk/types/mapping_retrieve_default_response.py">object</a></code>
+- <code title="get /{index_name}/mapping">client.mapping.<a href="./src/hubmap_search_sdk/resources/mapping.py">retrieve_index</a>(index_name) -> <a href="./src/hubmap_search_sdk/types/mapping_retrieve_index_response.py">object</a></code>
+
+# Update
+
+Methods:
+
+- <code title="put /update/{uuid}">client.update.<a href="./src/hubmap_search_sdk/resources/update.py">update_document</a>(uuid, \*\*<a href="src/hubmap_search_sdk/types/update_update_document_params.py">params</a>) -> None</code>
+- <code title="put /update/{uuid}/{index}">client.update.<a href="./src/hubmap_search_sdk/resources/update.py">update_document_at_index</a>(index, \*, uuid, \*\*<a href="src/hubmap_search_sdk/types/update_update_document_at_index_params.py">params</a>) -> None</code>
+- <code title="put /update/{uuid}/{index}/{scope}">client.update.<a href="./src/hubmap_search_sdk/resources/update.py">update_document_with_scope</a>(scope, \*, uuid, index, \*\*<a href="src/hubmap_search_sdk/types/update_update_document_with_scope_params.py">params</a>) -> None</code>
+
+# Add
+
+Methods:
+
+- <code title="post /add/{uuid}">client.add.<a href="./src/hubmap_search_sdk/resources/add.py">create_document</a>(uuid, \*\*<a href="src/hubmap_search_sdk/types/add_create_document_params.py">params</a>) -> None</code>
+- <code title="post /add/{uuid}/{index}">client.add.<a href="./src/hubmap_search_sdk/resources/add.py">create_document_with_index</a>(index, \*, uuid, \*\*<a href="src/hubmap_search_sdk/types/add_create_document_with_index_params.py">params</a>) -> None</code>
+- <code title="post /add/{uuid}/{index}/{scope}">client.add.<a href="./src/hubmap_search_sdk/resources/add.py">update_document_with_scope</a>(scope, \*, uuid, index, \*\*<a href="src/hubmap_search_sdk/types/add_update_document_with_scope_params.py">params</a>) -> None</code>
+
+# ClearDocs
+
+Methods:
+
+- <code title="post /clear-docs/{index}">client.clear_docs.<a href="./src/hubmap_search_sdk/resources/clear_docs.py">clear_all</a>(index) -> None</code>
+- <code title="post /clear-docs/{index}/{uuid}">client.clear_docs.<a href="./src/hubmap_search_sdk/resources/clear_docs.py">clear_by_uuid</a>(uuid, \*, index) -> None</code>
+- <code title="post /clear-docs/{index}/{uuid}/{scope}">client.clear_docs.<a href="./src/hubmap_search_sdk/resources/clear_docs.py">clear_by_uuid_and_scope</a>(scope, \*, index, uuid) -> None</code>
+
+# ScrollSearch
+
+Methods:
+
+- <code title="post /{index}/scroll-search">client.scroll_search.<a href="./src/hubmap_search_sdk/resources/scroll_search.py">create</a>(index, \*\*<a href="src/hubmap_search_sdk/types/scroll_search_create_params.py">params</a>) -> None</code>
