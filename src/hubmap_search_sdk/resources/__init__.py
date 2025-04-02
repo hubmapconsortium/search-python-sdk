@@ -1,5 +1,21 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+from .add import (
+    AddResource,
+    AsyncAddResource,
+    AddResourceWithRawResponse,
+    AsyncAddResourceWithRawResponse,
+    AddResourceWithStreamingResponse,
+    AsyncAddResourceWithStreamingResponse,
+)
+from .mget import (
+    MgetResource,
+    AsyncMgetResource,
+    MgetResourceWithRawResponse,
+    AsyncMgetResourceWithRawResponse,
+    MgetResourceWithStreamingResponse,
+    AsyncMgetResourceWithStreamingResponse,
+)
 from .search import (
     SearchResource,
     AsyncSearchResource,
@@ -7,6 +23,14 @@ from .search import (
     AsyncSearchResourceWithRawResponse,
     SearchResourceWithStreamingResponse,
     AsyncSearchResourceWithStreamingResponse,
+)
+from .update import (
+    UpdateResource,
+    AsyncUpdateResource,
+    UpdateResourceWithRawResponse,
+    AsyncUpdateResourceWithRawResponse,
+    UpdateResourceWithStreamingResponse,
+    AsyncUpdateResourceWithStreamingResponse,
 )
 from .indices import (
     IndicesResource,
@@ -16,6 +40,14 @@ from .indices import (
     IndicesResourceWithStreamingResponse,
     AsyncIndicesResourceWithStreamingResponse,
 )
+from .mapping import (
+    MappingResource,
+    AsyncMappingResource,
+    MappingResourceWithRawResponse,
+    AsyncMappingResourceWithRawResponse,
+    MappingResourceWithStreamingResponse,
+    AsyncMappingResourceWithStreamingResponse,
+)
 from .reindex import (
     ReindexResource,
     AsyncReindexResource,
@@ -24,6 +56,14 @@ from .reindex import (
     ReindexResourceWithStreamingResponse,
     AsyncReindexResourceWithStreamingResponse,
 )
+from .clear_docs import (
+    ClearDocsResource,
+    AsyncClearDocsResource,
+    ClearDocsResourceWithRawResponse,
+    AsyncClearDocsResourceWithRawResponse,
+    ClearDocsResourceWithStreamingResponse,
+    AsyncClearDocsResourceWithStreamingResponse,
+)
 from .param_search import (
     ParamSearchResource,
     AsyncParamSearchResource,
@@ -31,6 +71,14 @@ from .param_search import (
     AsyncParamSearchResourceWithRawResponse,
     ParamSearchResourceWithStreamingResponse,
     AsyncParamSearchResourceWithStreamingResponse,
+)
+from .scroll_search import (
+    ScrollSearchResource,
+    AsyncScrollSearchResource,
+    ScrollSearchResourceWithRawResponse,
+    AsyncScrollSearchResourceWithRawResponse,
+    ScrollSearchResourceWithStreamingResponse,
+    AsyncScrollSearchResourceWithStreamingResponse,
 )
 
 __all__ = [
@@ -58,4 +106,40 @@ __all__ = [
     "AsyncReindexResourceWithRawResponse",
     "ReindexResourceWithStreamingResponse",
     "AsyncReindexResourceWithStreamingResponse",
+    "MgetResource",
+    "AsyncMgetResource",
+    "MgetResourceWithRawResponse",
+    "AsyncMgetResourceWithRawResponse",
+    "MgetResourceWithStreamingResponse",
+    "AsyncMgetResourceWithStreamingResponse",
+    "MappingResource",
+    "AsyncMappingResource",
+    "MappingResourceWithRawResponse",
+    "AsyncMappingResourceWithRawResponse",
+    "MappingResourceWithStreamingResponse",
+    "AsyncMappingResourceWithStreamingResponse",
+    "UpdateResource",
+    "AsyncUpdateResource",
+    "UpdateResourceWithRawResponse",
+    "AsyncUpdateResourceWithRawResponse",
+    "UpdateResourceWithStreamingResponse",
+    "AsyncUpdateResourceWithStreamingResponse",
+    "AddResource",
+    "AsyncAddResource",
+    "AddResourceWithRawResponse",
+    "AsyncAddResourceWithRawResponse",
+    "AddResourceWithStreamingResponse",
+    "AsyncAddResourceWithStreamingResponse",
+    "ClearDocsResource",
+    "AsyncClearDocsResource",
+    "ClearDocsResourceWithRawResponse",
+    "AsyncClearDocsResourceWithRawResponse",
+    "ClearDocsResourceWithStreamingResponse",
+    "AsyncClearDocsResourceWithStreamingResponse",
+    "ScrollSearchResource",
+    "AsyncScrollSearchResource",
+    "ScrollSearchResourceWithRawResponse",
+    "AsyncScrollSearchResourceWithRawResponse",
+    "ScrollSearchResourceWithStreamingResponse",
+    "AsyncScrollSearchResourceWithStreamingResponse",
 ]

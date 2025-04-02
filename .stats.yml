@@ -1,4 +1,4 @@
-configured_endpoints: 5
-openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/hubmap-consortium-hubmap-m1%2Fhubmap-search-sdk-d152b0f4a7d7aa376be622312bc396cb4c9dc5dd0af6cd3bd86c2839d970639c.yml
-openapi_spec_hash: 40029f15f1452e3a7ee59b2ed9fbc147
-config_hash: 7cb0fa81ca9a34c50074efc1a4f31ac0
+configured_endpoints: 19
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/hubmap-consortium-hubmap-m1%2Fhubmap-search-sdk-c727e6e09a1c4639a793ad96f6c14bb1340f11d75fdacb068eb21e47681e8e48.yml
+openapi_spec_hash: c6ab7b9c50a650d515130f1bccc924ab
+config_hash: 1856fde317d0f1dea7d1affed7aed97f
