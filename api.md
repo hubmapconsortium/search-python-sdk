@@ -15,7 +15,11 @@ Methods:
 Types:
 
 ```python
-from hubmap_search_sdk.types import SearchExecuteIndexQueryResponse, SearchExecuteQueryResponse
+from hubmap_search_sdk.types import (
+    Dataset,
+    SearchExecuteIndexQueryResponse,
+    SearchExecuteQueryResponse,
+)
 ```
 
 Methods:
