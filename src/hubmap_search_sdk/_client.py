@@ -13,7 +13,6 @@ from ._qs import Querystring
 from ._types import (
     NOT_GIVEN,
     Omit,
-    Headers,
     Timeout,
     NotGiven,
     Transport,
@@ -139,17 +138,6 @@ class HubmapSearchSDK(SyncAPIClient):
             "X-Stainless-Async": "false",
             **self._custom_headers,
         }
-
-    @override
-    def _validate_headers(self, headers: Headers, custom_headers: Headers) -> None:
-        if self.bearer_token and headers.get("Authorization"):
-            return
-        if isinstance(custom_headers.get("Authorization"), Omit):
-            return
-
-        raise TypeError(
-            '"Could not resolve authentication method. Expected the bearer_token to be set. Or for the `Authorization` headers to be explicitly omitted"'
-        )
 
     def copy(
         self,
@@ -329,17 +317,6 @@ class AsyncHubmapSearchSDK(AsyncAPIClient):
             "X-Stainless-Async": f"async:{get_async_library()}",
             **self._custom_headers,
         }
-
-    @override
-    def _validate_headers(self, headers: Headers, custom_headers: Headers) -> None:
-        if self.bearer_token and headers.get("Authorization"):
-            return
-        if isinstance(custom_headers.get("Authorization"), Omit):
-            return
-
-        raise TypeError(
-            '"Could not resolve authentication method. Expected the bearer_token to be set. Or for the `Authorization` headers to be explicitly omitted"'
-        )
 
     def copy(
         self,
