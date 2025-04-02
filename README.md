@@ -31,8 +31,8 @@ client = HubmapSearchSDK(
     api_key=os.environ.get("HUBMAP_SEARCH_SDK_API_KEY"),  # This is the default and can be omitted
 )
 
-index = client.indices.list()
-print(index.indices)
+indices = client.indices.list()
+print(indices.indices)
 ```
 
 While you can provide an `api_key` keyword argument,
@@ -55,8 +55,8 @@ client = AsyncHubmapSearchSDK(
 
 
 async def main() -> None:
-    index = await client.indices.list()
-    print(index.indices)
+    indices = await client.indices.list()
+    print(indices.indices)
 
 
 asyncio.run(main())
