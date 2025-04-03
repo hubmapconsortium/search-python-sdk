@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.0-alpha.2 (2025-04-03)
+
+Full Changelog: [v1.0.0-alpha.1...v1.0.0-alpha.2](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.1...v1.0.0-alpha.2)
+
+### Features
+
+* reimplemented previous manual sdk fixes to correct 303 handling, and remove content type for get requests ([09f9c53](https://github.com/hubmapconsortium/search-python-sdk/commit/09f9c53c01d17e00f1a9f967516ed3deebabc480))
+* Update README.md ([adec897](https://github.com/hubmapconsortium/search-python-sdk/commit/adec897fa3887c963334694752697bcbb74b2361))
+
 ## 1.0.0-alpha.1 (2025-04-02)
 
 Full Changelog: [v0.0.1-alpha.0...v1.0.0-alpha.1](https://github.com/hubmapconsortium/search-python-sdk/compare/v0.0.1-alpha.0...v1.0.0-alpha.1)
