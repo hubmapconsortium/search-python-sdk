@@ -462,6 +462,9 @@ class BaseClient(Generic[_HttpxClientT, _DefaultStreamT]):
                 raise RuntimeError(f"Unexpected JSON data type, {type(json_data)}, cannot merge with `extra_body`")
 
         headers = self._build_headers(options, retries_taken=retries_taken)
+        # If it's a GET request and there's no body (no json_data or extra_json), remove Content-Type
+        if options.method.lower()=='get' and not json_data:
+            headers.pop('Content-Type', None)
         params = _merge_mappings(self.default_query, options.params)
         content_type = headers.get("Content-Type")
         files = options.files
@@ -999,6 +1002,15 @@ class SyncAPIClient(BaseClient[httpx.Client, Stream[Any]]):
             response.raise_for_status()
         except httpx.HTTPStatusError as err:  # thrown on 4xx and 5xx status code
             log.debug("Encountered httpx.HTTPStatusError", exc_info=True)
+            if response.status_code in (301, 302, 303, 307, 308):
+                return self._process_response(
+                    cast_to=cast_to,
+                    options=options,
+                    response=response,
+                    stream=stream,
+                    stream_cls=stream_cls,
+                    retries_taken=retries_taken,
+                )
 
             if remaining_retries > 0 and self._should_retry(err.response):
                 err.response.close()
