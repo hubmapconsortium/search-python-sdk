@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.3 (2025-04-04)
+
+Full Changelog: [v1.0.0-alpha.2...v1.0.0-alpha.3](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.2...v1.0.0-alpha.3)
+
+### Chores
+
+* **internal:** remove trailing character ([#20](https://github.com/hubmapconsortium/search-python-sdk/issues/20)) ([eba7907](https://github.com/hubmapconsortium/search-python-sdk/commit/eba7907ee5740d1280a2e8644505539d7e0f2bd2))
+
 ## 1.0.0-alpha.2 (2025-04-03)
 
 Full Changelog: [v1.0.0-alpha.1...v1.0.0-alpha.2](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.1...v1.0.0-alpha.2)
