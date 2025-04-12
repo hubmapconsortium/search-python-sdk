@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.0.0-alpha.4 (2025-04-12)
+
+Full Changelog: [v1.0.0-alpha.3...v1.0.0-alpha.4](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.3...v1.0.0-alpha.4)
+
+### Bug Fixes
+
+* **perf:** optimize some hot paths ([5212433](https://github.com/hubmapconsortium/search-python-sdk/commit/5212433093ec3d9cce2270a07d825a88c852bded))
+* **perf:** skip traversing types for NotGiven values ([383d6b2](https://github.com/hubmapconsortium/search-python-sdk/commit/383d6b222bfa396b9b083027178c27c1fb057df6))
+
+
+### Chores
+
+* **internal:** expand CI branch coverage ([5cb57ca](https://github.com/hubmapconsortium/search-python-sdk/commit/5cb57ca2e66a71d85e638df9c377b2305a136c66))
+* **internal:** reduce CI branch coverage ([3d69904](https://github.com/hubmapconsortium/search-python-sdk/commit/3d699046bc26aa7bebf84061cf0d34aee6e944c5))
+
 ## 1.0.0-alpha.3 (2025-04-09)
 
 Full Changelog: [v1.0.0-alpha.2...v1.0.0-alpha.3](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.2...v1.0.0-alpha.3)
