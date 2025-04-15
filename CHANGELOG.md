@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.0-alpha.5 (2025-04-15)
+
+Full Changelog: [v1.0.0-alpha.4...v1.0.0-alpha.5](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.4...v1.0.0-alpha.5)
+
+### Chores
+
+* **client:** minor internal fixes ([ca092e8](https://github.com/hubmapconsortium/search-python-sdk/commit/ca092e8c959251d34a05301386bb1b9c199b4c04))
+* **internal:** update pyright settings ([d4ae4c0](https://github.com/hubmapconsortium/search-python-sdk/commit/d4ae4c0a49aa4c028e3115a159f4ffccd73a8156))
+
 ## 1.0.0-alpha.4 (2025-04-12)
 
 Full Changelog: [v1.0.0-alpha.3...v1.0.0-alpha.4](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.3...v1.0.0-alpha.4)
