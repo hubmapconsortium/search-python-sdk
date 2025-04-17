@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.0-alpha.6 (2025-04-17)
+
+Full Changelog: [v1.0.0-alpha.5...v1.0.0-alpha.6](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.5...v1.0.0-alpha.6)
+
+### Chores
+
+* **internal:** base client updates ([3106bc7](https://github.com/hubmapconsortium/search-python-sdk/commit/3106bc7baaf6328b44a5793d780df3b4961ce1af))
+* **internal:** bump pyright version ([df6d9fa](https://github.com/hubmapconsortium/search-python-sdk/commit/df6d9fab3f66c52820d2d52d1e492bbd1418b22a))
+
 ## 1.0.0-alpha.5 (2025-04-15)
 
 Full Changelog: [v1.0.0-alpha.4...v1.0.0-alpha.5](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.4...v1.0.0-alpha.5)
