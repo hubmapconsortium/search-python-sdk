@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.7 (2025-04-19)
+
+Full Changelog: [v1.0.0-alpha.6...v1.0.0-alpha.7](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.6...v1.0.0-alpha.7)
+
+### Chores
+
+* **internal:** update models test ([187abdd](https://github.com/hubmapconsortium/search-python-sdk/commit/187abddbd7b4c73dc7452e6bf2f1cec275e018c6))
+
 ## 1.0.0-alpha.6 (2025-04-17)
 
 Full Changelog: [v1.0.0-alpha.5...v1.0.0-alpha.6](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.5...v1.0.0-alpha.6)
