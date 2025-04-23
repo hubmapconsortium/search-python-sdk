@@ -19,10 +19,7 @@ from ._types import (
     ProxiesTypes,
     RequestOptions,
 )
-from ._utils import (
-    is_given,
-    get_async_library,
-)
+from ._utils import is_given, get_async_library
 from ._version import __version__
 from .resources import add, mget, search, update, indices, mapping, reindex, clear_docs, param_search, scroll_search
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
