@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.0.0-alpha.8 (2025-04-24)
+
+Full Changelog: [v1.0.0-alpha.7...v1.0.0-alpha.8](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.7...v1.0.0-alpha.8)
+
+### Bug Fixes
+
+* **pydantic v1:** more robust ModelField.annotation check ([ebde20e](https://github.com/hubmapconsortium/search-python-sdk/commit/ebde20e8bcfc0d99134b0e0de0a3a3aa8055640e))
+
+
+### Chores
+
+* broadly detect json family of content-type headers ([c396afa](https://github.com/hubmapconsortium/search-python-sdk/commit/c396afac5f8ea832687f62698e1fade6de66413f))
+* **ci:** add timeout thresholds for CI jobs ([f7dd38b](https://github.com/hubmapconsortium/search-python-sdk/commit/f7dd38bbd0db1570171e6219b68bad5342ab859c))
+* **ci:** only use depot for staging repos ([0f398d5](https://github.com/hubmapconsortium/search-python-sdk/commit/0f398d528b815ed42d5ebc195d9d370cf154b5b7))
+* **internal:** codegen related update ([298fae9](https://github.com/hubmapconsortium/search-python-sdk/commit/298fae95ee564d0ed706c29a7fd1fabb6ee25e85))
+* **internal:** fix list file params ([e219bfb](https://github.com/hubmapconsortium/search-python-sdk/commit/e219bfbcad87ac0eae4bbfec780f8136f6daa2e0))
+* **internal:** import reformatting ([a7232e0](https://github.com/hubmapconsortium/search-python-sdk/commit/a7232e059f24120e4c18e82deb91d2cf3dc29574))
+* **internal:** refactor retries to not use recursion ([5fba30d](https://github.com/hubmapconsortium/search-python-sdk/commit/5fba30deb793c0483960a78a794d3d43683071cd))
+
 ## 1.0.0-alpha.7 (2025-04-19)
 
 Full Changelog: [v1.0.0-alpha.6...v1.0.0-alpha.7](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.6...v1.0.0-alpha.7)
