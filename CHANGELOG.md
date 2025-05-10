@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.0.0-alpha.9 (2025-05-10)
+
+Full Changelog: [v1.0.0-alpha.8...v1.0.0-alpha.9](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.8...v1.0.0-alpha.9)
+
+### Bug Fixes
+
+* **package:** support direct resource imports ([1a043fa](https://github.com/hubmapconsortium/search-python-sdk/commit/1a043fa679f9d180891f85b7eda0c0330bdb97d7))
+
+
+### Chores
+
+* **internal:** avoid errors for isinstance checks on proxies ([a5f7277](https://github.com/hubmapconsortium/search-python-sdk/commit/a5f727743444a957c2e3d66c7710392ac169189f))
+
 ## 1.0.0-alpha.8 (2025-04-24)
 
 Full Changelog: [v1.0.0-alpha.7...v1.0.0-alpha.8](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.7...v1.0.0-alpha.8)
