@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.10 (2025-05-16)
+
+Full Changelog: [v1.0.0-alpha.9...v1.0.0-alpha.10](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.9...v1.0.0-alpha.10)
+
+### Chores
+
+* **ci:** fix installation instructions ([f4a3efc](https://github.com/hubmapconsortium/search-python-sdk/commit/f4a3efc2ee1bcf2c7007000d8b66e32f19d7a358))
+
 ## 1.0.0-alpha.9 (2025-05-15)
 
 Full Changelog: [v1.0.0-alpha.8...v1.0.0-alpha.9](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.8...v1.0.0-alpha.9)
