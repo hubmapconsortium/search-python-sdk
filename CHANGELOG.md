@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.12 (2025-05-22)
+
+Full Changelog: [v1.0.0-alpha.11...v1.0.0-alpha.12](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.11...v1.0.0-alpha.12)
+
+### Chores
+
+* **docs:** grammar improvements ([03d1cdb](https://github.com/hubmapconsortium/search-python-sdk/commit/03d1cdbead066a0facb544ed148ba85a4e84a2c9))
+
 ## 1.0.0-alpha.11 (2025-05-17)
 
 Full Changelog: [v1.0.0-alpha.10...v1.0.0-alpha.11](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.10...v1.0.0-alpha.11)
