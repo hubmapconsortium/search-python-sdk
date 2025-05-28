@@ -15,29 +15,19 @@ Methods:
 Types:
 
 ```python
-from hubmap_search_sdk.types import (
-    Dataset,
-    SearchExecuteIndexQueryResponse,
-    SearchExecuteQueryResponse,
-)
+from hubmap_search_sdk.types import Dataset
 ```
 
 Methods:
 
-- <code title="post /{index_name}/search">client.search.<a href="./src/hubmap_search_sdk/resources/search.py">execute_index_query</a>(index_name, \*\*<a href="src/hubmap_search_sdk/types/search_execute_index_query_params.py">params</a>) -> <a href="./src/hubmap_search_sdk/types/search_execute_index_query_response.py">object</a></code>
-- <code title="post /search">client.search.<a href="./src/hubmap_search_sdk/resources/search.py">execute_query</a>(\*\*<a href="src/hubmap_search_sdk/types/search_execute_query_params.py">params</a>) -> <a href="./src/hubmap_search_sdk/types/search_execute_query_response.py">object</a></code>
+- <code title="post /{index_name}/search">client.search.<a href="./src/hubmap_search_sdk/resources/search.py">execute_index_query</a>(index_name, \*\*<a href="src/hubmap_search_sdk/types/search_execute_index_query_params.py">params</a>) -> object</code>
+- <code title="post /search">client.search.<a href="./src/hubmap_search_sdk/resources/search.py">execute_query</a>(\*\*<a href="src/hubmap_search_sdk/types/search_execute_query_params.py">params</a>) -> object</code>
 
 # ParamSearch
 
-Types:
-
-```python
-from hubmap_search_sdk.types import ParamSearchExecuteResponse
-```
-
 Methods:
 
-- <code title="get /param-search/{entity_type}">client.param_search.<a href="./src/hubmap_search_sdk/resources/param_search.py">execute</a>(entity_type, \*\*<a href="src/hubmap_search_sdk/types/param_search_execute_params.py">params</a>) -> <a href="./src/hubmap_search_sdk/types/param_search_execute_response.py">object</a></code>
+- <code title="get /param-search/{entity_type}">client.param_search.<a href="./src/hubmap_search_sdk/resources/param_search.py">execute</a>(entity_type, \*\*<a href="src/hubmap_search_sdk/types/param_search_execute_params.py">params</a>) -> object</code>
 
 # Reindex
 
@@ -47,32 +37,17 @@ Methods:
 
 # Mget
 
-Types:
-
-```python
-from hubmap_search_sdk.types import (
-    MgetRetrieveMultipleResponse,
-    MgetRetrieveMultipleByIndexResponse,
-)
-```
-
 Methods:
 
-- <code title="post /mget">client.mget.<a href="./src/hubmap_search_sdk/resources/mget.py">retrieve_multiple</a>(\*\*<a href="src/hubmap_search_sdk/types/mget_retrieve_multiple_params.py">params</a>) -> <a href="./src/hubmap_search_sdk/types/mget_retrieve_multiple_response.py">object</a></code>
-- <code title="post /{index_name}/mget">client.mget.<a href="./src/hubmap_search_sdk/resources/mget.py">retrieve_multiple_by_index</a>(index_name, \*\*<a href="src/hubmap_search_sdk/types/mget_retrieve_multiple_by_index_params.py">params</a>) -> <a href="./src/hubmap_search_sdk/types/mget_retrieve_multiple_by_index_response.py">object</a></code>
+- <code title="post /mget">client.mget.<a href="./src/hubmap_search_sdk/resources/mget.py">retrieve_multiple</a>(\*\*<a href="src/hubmap_search_sdk/types/mget_retrieve_multiple_params.py">params</a>) -> object</code>
+- <code title="post /{index_name}/mget">client.mget.<a href="./src/hubmap_search_sdk/resources/mget.py">retrieve_multiple_by_index</a>(index_name, \*\*<a href="src/hubmap_search_sdk/types/mget_retrieve_multiple_by_index_params.py">params</a>) -> object</code>
 
 # Mapping
 
-Types:
-
-```python
-from hubmap_search_sdk.types import MappingRetrieveDefaultResponse, MappingRetrieveIndexResponse
-```
-
 Methods:
 
-- <code title="get /mapping">client.mapping.<a href="./src/hubmap_search_sdk/resources/mapping.py">retrieve_default</a>() -> <a href="./src/hubmap_search_sdk/types/mapping_retrieve_default_response.py">object</a></code>
-- <code title="get /{index_name}/mapping">client.mapping.<a href="./src/hubmap_search_sdk/resources/mapping.py">retrieve_index</a>(index_name) -> <a href="./src/hubmap_search_sdk/types/mapping_retrieve_index_response.py">object</a></code>
+- <code title="get /mapping">client.mapping.<a href="./src/hubmap_search_sdk/resources/mapping.py">retrieve_default</a>() -> object</code>
+- <code title="get /{index_name}/mapping">client.mapping.<a href="./src/hubmap_search_sdk/resources/mapping.py">retrieve_index</a>(index_name) -> object</code>
 
 # Update
 
