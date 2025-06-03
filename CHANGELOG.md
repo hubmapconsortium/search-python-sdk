@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.0.0-alpha.13 (2025-06-03)
+
+Full Changelog: [v1.0.0-alpha.12...v1.0.0-alpha.13](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.12...v1.0.0-alpha.13)
+
+### Features
+
+* **client:** add follow_redirects request option ([55b10c1](https://github.com/hubmapconsortium/search-python-sdk/commit/55b10c18cfea334e5ea9558f70ded70c2b21e34c))
+
+
+### Chores
+
+* **docs:** remove reference to rye shell ([ef26230](https://github.com/hubmapconsortium/search-python-sdk/commit/ef262304d809361ee6d56932bdb9328157e8aef6))
+
 ## 1.0.0-alpha.12 (2025-05-28)
 
 Full Changelog: [v1.0.0-alpha.11...v1.0.0-alpha.12](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.11...v1.0.0-alpha.12)
