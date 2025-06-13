@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.0.0-alpha.14 (2025-06-13)
+
+Full Changelog: [v1.0.0-alpha.13...v1.0.0-alpha.14](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.13...v1.0.0-alpha.14)
+
+### Bug Fixes
+
+* **client:** correctly parse binary response | stream ([e9dc865](https://github.com/hubmapconsortium/search-python-sdk/commit/e9dc8654daf52a63214e8575307e25b9c748506e))
+
+
+### Chores
+
+* **tests:** run tests in parallel ([ada43cc](https://github.com/hubmapconsortium/search-python-sdk/commit/ada43cc98977f550f9c8a8f2a27bd53dcb0a0697))
+
 ## 1.0.0-alpha.13 (2025-06-03)
 
 Full Changelog: [v1.0.0-alpha.12...v1.0.0-alpha.13](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.12...v1.0.0-alpha.13)
