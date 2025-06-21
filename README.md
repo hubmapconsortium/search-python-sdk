@@ -1,6 +1,6 @@
 # HuBMAP Search SDK Python API Library
 
-[![PyPI version](https://img.shields.io/pypi/v/hubmap_search_sdk.svg)](https://pypi.org/project/hubmap_search_sdk/)
+[![PyPI version](<https://img.shields.io/pypi/v/hubmap_search_sdk.svg?label=pypi%20(stable)>)](https://pypi.org/project/hubmap_search_sdk/)
 
 The HuBMAP Search SDK Python library provides convenient access to the HuBMAP Search REST API from any Python 3.8+
 application. The library includes type definitions for all request params and response fields,
@@ -56,6 +56,37 @@ asyncio.run(main())
 ```
 
 Functionality between the synchronous and asynchronous clients is otherwise identical.
+
+### With aiohttp
+
+By default, the async client uses `httpx` for HTTP requests. However, for improved concurrency performance you may also use `aiohttp` as the HTTP backend.
+
+You can enable this by installing `aiohttp`:
+
+```sh
+# install from PyPI
+pip install --pre hubmap_search_sdk[aiohttp]
+```
+
+Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
+
+```python
+import asyncio
+from hubmap_search_sdk import DefaultAioHttpClient
+from hubmap_search_sdk import AsyncHubmapSearchSDK
+
+
+async def main() -> None:
+    async with AsyncHubmapSearchSDK(
+        bearer_token="My Bearer Token",
+        http_client=DefaultAioHttpClient(),
+    ) as client:
+        indices = await client.indices.list()
+        print(indices.indices)
+
+
+asyncio.run(main())
+```
 
 ## Using types
 
@@ -131,7 +162,7 @@ client.with_options(max_retries=5).indices.list()
 ### Timeouts
 
 By default requests time out after 1 minute. You can configure this with a `timeout` option,
-which accepts a float or an [`httpx.Timeout`](https://www.python-httpx.org/advanced/#fine-tuning-the-configuration) object:
+which accepts a float or an [`httpx.Timeout`](https://www.python-httpx.org/advanced/timeouts/#fine-tuning-the-configuration) object:
 
 ```python
 from hubmap_search_sdk import HubmapSearchSDK
