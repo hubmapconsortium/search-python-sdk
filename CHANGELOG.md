@@ -1,5 +1,36 @@
 # Changelog
 
+## 1.0.0-alpha.14 (2025-06-28)
+
+Full Changelog: [v1.0.0-alpha.13...v1.0.0-alpha.14](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.13...v1.0.0-alpha.14)
+
+### Features
+
+* **client:** add support for aiohttp ([2e47165](https://github.com/hubmapconsortium/search-python-sdk/commit/2e47165ede72e1dbd891097afa5fe5cc23790b79))
+
+
+### Bug Fixes
+
+* **ci:** release-doctor — report correct token name ([33bf6f7](https://github.com/hubmapconsortium/search-python-sdk/commit/33bf6f7dbf29f9b4d2747e09bf9ef848b0411fea))
+* **client:** correctly parse binary response | stream ([e9dc865](https://github.com/hubmapconsortium/search-python-sdk/commit/e9dc8654daf52a63214e8575307e25b9c748506e))
+* **tests:** fix: tests which call HTTP endpoints directly with the example parameters ([854e415](https://github.com/hubmapconsortium/search-python-sdk/commit/854e41578698efee91b595e702721c1570ecebd5))
+
+
+### Chores
+
+* **ci:** enable for pull requests ([e7be8b2](https://github.com/hubmapconsortium/search-python-sdk/commit/e7be8b27cda54e12afc5e2936e1238c8dd3f5657))
+* **ci:** only run for pushes and fork pull requests ([1d726a4](https://github.com/hubmapconsortium/search-python-sdk/commit/1d726a486601f809f7ea796b3e26b288f04422b6))
+* **internal:** update conftest.py ([4ea44f2](https://github.com/hubmapconsortium/search-python-sdk/commit/4ea44f2d19f71d20b997cf49fc659819a80f7786))
+* **readme:** update badges ([82fcb23](https://github.com/hubmapconsortium/search-python-sdk/commit/82fcb23a979d8dd8620ea9a6733f9aa661b6fae5))
+* **tests:** add tests for httpx client instantiation & proxies ([2e2d7ac](https://github.com/hubmapconsortium/search-python-sdk/commit/2e2d7ace3a416e7f6805d75c0ca8878508be9434))
+* **tests:** run tests in parallel ([ada43cc](https://github.com/hubmapconsortium/search-python-sdk/commit/ada43cc98977f550f9c8a8f2a27bd53dcb0a0697))
+* **tests:** skip some failing tests on the latest python versions ([e8a90b8](https://github.com/hubmapconsortium/search-python-sdk/commit/e8a90b8b85442856af633c0c6b663d000c7fc8f8))
+
+
+### Documentation
+
+* **client:** fix httpx.Timeout documentation reference ([5e38f78](https://github.com/hubmapconsortium/search-python-sdk/commit/5e38f78a35147577cbc911fc19804fe430d2cd6f))
+
 ## 1.0.0-alpha.13 (2025-06-03)
 
 Full Changelog: [v1.0.0-alpha.12...v1.0.0-alpha.13](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.12...v1.0.0-alpha.13)
