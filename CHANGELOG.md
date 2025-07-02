@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.0.0-alpha.15 (2025-07-02)
+
+Full Changelog: [v1.0.0-alpha.14...v1.0.0-alpha.15](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.14...v1.0.0-alpha.15)
+
+### Bug Fixes
+
+* **ci:** correct conditional ([fd479c5](https://github.com/hubmapconsortium/search-python-sdk/commit/fd479c5d91f92e4cbbe812fb646c4489eaf98615))
+
+
+### Chores
+
+* **ci:** change upload type ([cd68baa](https://github.com/hubmapconsortium/search-python-sdk/commit/cd68baaabd17ccb5a71715a6315eb44c57546123))
+
 ## 1.0.0-alpha.14 (2025-06-28)
 
 Full Changelog: [v1.0.0-alpha.13...v1.0.0-alpha.14](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.13...v1.0.0-alpha.14)
