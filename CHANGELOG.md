@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.16 (2025-07-08)
+
+Full Changelog: [v1.0.0-alpha.15...v1.0.0-alpha.16](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.15...v1.0.0-alpha.16)
+
+### Chores
+
+* **internal:** codegen related update ([49d7a20](https://github.com/hubmapconsortium/search-python-sdk/commit/49d7a20a87d6ffdecf4e7800289d9f9a3bfea6df))
+
 ## 1.0.0-alpha.15 (2025-07-02)
 
 Full Changelog: [v1.0.0-alpha.14...v1.0.0-alpha.15](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.14...v1.0.0-alpha.15)
