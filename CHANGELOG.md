@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.0.0-alpha.17 (2025-07-11)
+
+Full Changelog: [v1.0.0-alpha.16...v1.0.0-alpha.17](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.16...v1.0.0-alpha.17)
+
+### Bug Fixes
+
+* **parsing:** correctly handle nested discriminated unions ([fe2c902](https://github.com/hubmapconsortium/search-python-sdk/commit/fe2c902d4d0ddccb5ee3ecdbfb018a57144dfa43))
+
+
+### Chores
+
+* **internal:** bump pinned h11 dep ([b94854e](https://github.com/hubmapconsortium/search-python-sdk/commit/b94854e0e5e9040f47bab24e6da4fff17f580acd))
+* **package:** mark python 3.13 as supported ([bc8d5ac](https://github.com/hubmapconsortium/search-python-sdk/commit/bc8d5acf77ae59c4d1287e8e8a84e9ed9bd97410))
+* **readme:** fix version rendering on pypi ([f68e594](https://github.com/hubmapconsortium/search-python-sdk/commit/f68e5949d4a3437542ced5a529b66e5a399640b9))
+
 ## 1.0.0-alpha.16 (2025-07-08)
 
 Full Changelog: [v1.0.0-alpha.15...v1.0.0-alpha.16](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.15...v1.0.0-alpha.16)
