@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.18 (2025-07-12)
+
+Full Changelog: [v1.0.0-alpha.17...v1.0.0-alpha.18](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.17...v1.0.0-alpha.18)
+
+### Bug Fixes
+
+* **client:** don't send Content-Type header on GET requests ([1898678](https://github.com/hubmapconsortium/search-python-sdk/commit/18986789c246be8b94a66875b68cf47af0c774c0))
+
 ## 1.0.0-alpha.17 (2025-07-11)
 
 Full Changelog: [v1.0.0-alpha.16...v1.0.0-alpha.17](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.16...v1.0.0-alpha.17)
