@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.19 (2025-07-22)
+
+Full Changelog: [v1.0.0-alpha.18...v1.0.0-alpha.19](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.18...v1.0.0-alpha.19)
+
+### Bug Fixes
+
+* **parsing:** ignore empty metadata ([671e114](https://github.com/hubmapconsortium/search-python-sdk/commit/671e11470215ee0473831a8e4ef3eeb4447e3fd0))
+
 ## 1.0.0-alpha.18 (2025-07-12)
 
 Full Changelog: [v1.0.0-alpha.17...v1.0.0-alpha.18](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.17...v1.0.0-alpha.18)
