@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.20 (2025-07-23)
+
+Full Changelog: [v1.0.0-alpha.19...v1.0.0-alpha.20](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.19...v1.0.0-alpha.20)
+
+### Bug Fixes
+
+* **parsing:** parse extra field types ([15a88ec](https://github.com/hubmapconsortium/search-python-sdk/commit/15a88ecad6b93c30473e100796fc075e947ba04c))
+
 ## 1.0.0-alpha.19 (2025-07-22)
 
 Full Changelog: [v1.0.0-alpha.18...v1.0.0-alpha.19](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.18...v1.0.0-alpha.19)
