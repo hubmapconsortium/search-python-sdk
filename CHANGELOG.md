@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.21 (2025-07-25)
+
+Full Changelog: [v1.0.0-alpha.20...v1.0.0-alpha.21](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.20...v1.0.0-alpha.21)
+
+### Chores
+
+* **project:** add settings file for vscode ([5c82eaa](https://github.com/hubmapconsortium/search-python-sdk/commit/5c82eaa871ea7f0777f3b0a82309621dff547865))
+
 ## 1.0.0-alpha.20 (2025-07-23)
 
 Full Changelog: [v1.0.0-alpha.19...v1.0.0-alpha.20](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.19...v1.0.0-alpha.20)
