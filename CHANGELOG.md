@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.22 (2025-07-31)
+
+Full Changelog: [v1.0.0-alpha.21...v1.0.0-alpha.22](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.21...v1.0.0-alpha.22)
+
+### Features
+
+* **client:** support file upload requests ([fa12984](https://github.com/hubmapconsortium/search-python-sdk/commit/fa12984fe8b1d300cb559b49a825f1a082e34bef))
+
 ## 1.0.0-alpha.21 (2025-07-25)
 
 Full Changelog: [v1.0.0-alpha.20...v1.0.0-alpha.21](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.20...v1.0.0-alpha.21)
