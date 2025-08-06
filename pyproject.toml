@@ -1,6 +1,6 @@
 [project]
 name = "hubmap_search_sdk"
-version = "1.0.0-alpha.22"
+version = "1.0.0-alpha.23"
 description = "The official Python library for the hubmap-search-sdk API"
 dynamic = ["readme"]
 license = "MIT"
@@ -159,7 +159,7 @@ reportPrivateUsage = false
 [tool.ruff]
 line-length = 120
 output-format = "grouped"
-target-version = "py37"
+target-version = "py38"
 
 [tool.ruff.format]
 docstring-code-format = true
