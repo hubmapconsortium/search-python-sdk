@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.23 (2025-08-06)
+
+Full Changelog: [v1.0.0-alpha.22...v1.0.0-alpha.23](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.22...v1.0.0-alpha.23)
+
+### Chores
+
+* **internal:** fix ruff target version ([2bd8fb5](https://github.com/hubmapconsortium/search-python-sdk/commit/2bd8fb5079c7a2b52262f44c7b7ef9be8edf84f7))
+
 ## 1.0.0-alpha.22 (2025-07-31)
 
 Full Changelog: [v1.0.0-alpha.21...v1.0.0-alpha.22](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.21...v1.0.0-alpha.22)
