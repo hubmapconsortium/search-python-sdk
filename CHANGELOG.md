@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.0-alpha.24 (2025-08-09)
+
+Full Changelog: [v1.0.0-alpha.23...v1.0.0-alpha.24](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.23...v1.0.0-alpha.24)
+
+### Chores
+
+* **internal:** update comment in script ([abe0674](https://github.com/hubmapconsortium/search-python-sdk/commit/abe0674be18b76548fefecb33d8804f84edf392a))
+* update @stainless-api/prism-cli to v5.15.0 ([c66c84b](https://github.com/hubmapconsortium/search-python-sdk/commit/c66c84baf22ce26e12b6a4d7df93ba868c309a17))
+
 ## 1.0.0-alpha.23 (2025-08-06)
 
 Full Changelog: [v1.0.0-alpha.22...v1.0.0-alpha.23](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.22...v1.0.0-alpha.23)
