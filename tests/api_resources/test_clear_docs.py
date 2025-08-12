@@ -15,7 +15,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestClearDocs:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_clear_all(self, client: HubmapSearchSDK) -> None:
         clear_doc = client.clear_docs.clear_all(
@@ -23,7 +23,7 @@ class TestClearDocs:
         )
         assert clear_doc is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_clear_all(self, client: HubmapSearchSDK) -> None:
         response = client.clear_docs.with_raw_response.clear_all(
@@ -35,7 +35,7 @@ class TestClearDocs:
         clear_doc = response.parse()
         assert clear_doc is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_clear_all(self, client: HubmapSearchSDK) -> None:
         with client.clear_docs.with_streaming_response.clear_all(
@@ -49,7 +49,7 @@ class TestClearDocs:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_clear_all(self, client: HubmapSearchSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `index` but received ''"):
@@ -57,7 +57,7 @@ class TestClearDocs:
                 "",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_clear_by_uuid(self, client: HubmapSearchSDK) -> None:
         clear_doc = client.clear_docs.clear_by_uuid(
@@ -66,7 +66,7 @@ class TestClearDocs:
         )
         assert clear_doc is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_clear_by_uuid(self, client: HubmapSearchSDK) -> None:
         response = client.clear_docs.with_raw_response.clear_by_uuid(
@@ -79,7 +79,7 @@ class TestClearDocs:
         clear_doc = response.parse()
         assert clear_doc is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_clear_by_uuid(self, client: HubmapSearchSDK) -> None:
         with client.clear_docs.with_streaming_response.clear_by_uuid(
@@ -94,7 +94,7 @@ class TestClearDocs:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_clear_by_uuid(self, client: HubmapSearchSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `index` but received ''"):
@@ -109,7 +109,7 @@ class TestClearDocs:
                 index="index",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_clear_by_uuid_and_scope(self, client: HubmapSearchSDK) -> None:
         clear_doc = client.clear_docs.clear_by_uuid_and_scope(
@@ -119,7 +119,7 @@ class TestClearDocs:
         )
         assert clear_doc is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_clear_by_uuid_and_scope(self, client: HubmapSearchSDK) -> None:
         response = client.clear_docs.with_raw_response.clear_by_uuid_and_scope(
@@ -133,7 +133,7 @@ class TestClearDocs:
         clear_doc = response.parse()
         assert clear_doc is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_clear_by_uuid_and_scope(self, client: HubmapSearchSDK) -> None:
         with client.clear_docs.with_streaming_response.clear_by_uuid_and_scope(
@@ -149,7 +149,7 @@ class TestClearDocs:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_clear_by_uuid_and_scope(self, client: HubmapSearchSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `index` but received ''"):
@@ -179,7 +179,7 @@ class TestAsyncClearDocs:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_clear_all(self, async_client: AsyncHubmapSearchSDK) -> None:
         clear_doc = await async_client.clear_docs.clear_all(
@@ -187,7 +187,7 @@ class TestAsyncClearDocs:
         )
         assert clear_doc is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_clear_all(self, async_client: AsyncHubmapSearchSDK) -> None:
         response = await async_client.clear_docs.with_raw_response.clear_all(
@@ -199,7 +199,7 @@ class TestAsyncClearDocs:
         clear_doc = await response.parse()
         assert clear_doc is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_clear_all(self, async_client: AsyncHubmapSearchSDK) -> None:
         async with async_client.clear_docs.with_streaming_response.clear_all(
@@ -213,7 +213,7 @@ class TestAsyncClearDocs:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_clear_all(self, async_client: AsyncHubmapSearchSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `index` but received ''"):
@@ -221,7 +221,7 @@ class TestAsyncClearDocs:
                 "",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_clear_by_uuid(self, async_client: AsyncHubmapSearchSDK) -> None:
         clear_doc = await async_client.clear_docs.clear_by_uuid(
@@ -230,7 +230,7 @@ class TestAsyncClearDocs:
         )
         assert clear_doc is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_clear_by_uuid(self, async_client: AsyncHubmapSearchSDK) -> None:
         response = await async_client.clear_docs.with_raw_response.clear_by_uuid(
@@ -243,7 +243,7 @@ class TestAsyncClearDocs:
         clear_doc = await response.parse()
         assert clear_doc is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_clear_by_uuid(self, async_client: AsyncHubmapSearchSDK) -> None:
         async with async_client.clear_docs.with_streaming_response.clear_by_uuid(
@@ -258,7 +258,7 @@ class TestAsyncClearDocs:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_clear_by_uuid(self, async_client: AsyncHubmapSearchSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `index` but received ''"):
@@ -273,7 +273,7 @@ class TestAsyncClearDocs:
                 index="index",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_clear_by_uuid_and_scope(self, async_client: AsyncHubmapSearchSDK) -> None:
         clear_doc = await async_client.clear_docs.clear_by_uuid_and_scope(
@@ -283,7 +283,7 @@ class TestAsyncClearDocs:
         )
         assert clear_doc is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_clear_by_uuid_and_scope(self, async_client: AsyncHubmapSearchSDK) -> None:
         response = await async_client.clear_docs.with_raw_response.clear_by_uuid_and_scope(
@@ -297,7 +297,7 @@ class TestAsyncClearDocs:
         clear_doc = await response.parse()
         assert clear_doc is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_clear_by_uuid_and_scope(self, async_client: AsyncHubmapSearchSDK) -> None:
         async with async_client.clear_docs.with_streaming_response.clear_by_uuid_and_scope(
@@ -313,7 +313,7 @@ class TestAsyncClearDocs:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_clear_by_uuid_and_scope(self, async_client: AsyncHubmapSearchSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `index` but received ''"):

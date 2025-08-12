@@ -15,7 +15,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestAdd:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_create_document(self, client: HubmapSearchSDK) -> None:
         add = client.add.create_document(
@@ -70,7 +70,7 @@ class TestAdd:
         )
         assert add is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_create_document(self, client: HubmapSearchSDK) -> None:
         response = client.add.with_raw_response.create_document(
@@ -129,7 +129,7 @@ class TestAdd:
         add = response.parse()
         assert add is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_create_document(self, client: HubmapSearchSDK) -> None:
         with client.add.with_streaming_response.create_document(
@@ -190,7 +190,7 @@ class TestAdd:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_create_document(self, client: HubmapSearchSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `uuid` but received ''"):
@@ -245,7 +245,7 @@ class TestAdd:
                 },
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_create_document_with_index(self, client: HubmapSearchSDK) -> None:
         add = client.add.create_document_with_index(
@@ -301,7 +301,7 @@ class TestAdd:
         )
         assert add is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_create_document_with_index(self, client: HubmapSearchSDK) -> None:
         response = client.add.with_raw_response.create_document_with_index(
@@ -361,7 +361,7 @@ class TestAdd:
         add = response.parse()
         assert add is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_create_document_with_index(self, client: HubmapSearchSDK) -> None:
         with client.add.with_streaming_response.create_document_with_index(
@@ -423,7 +423,7 @@ class TestAdd:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_create_document_with_index(self, client: HubmapSearchSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `uuid` but received ''"):
@@ -532,7 +532,7 @@ class TestAdd:
                 },
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_update_document_with_scope(self, client: HubmapSearchSDK) -> None:
         add = client.add.update_document_with_scope(
@@ -589,7 +589,7 @@ class TestAdd:
         )
         assert add is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_update_document_with_scope(self, client: HubmapSearchSDK) -> None:
         response = client.add.with_raw_response.update_document_with_scope(
@@ -650,7 +650,7 @@ class TestAdd:
         add = response.parse()
         assert add is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_update_document_with_scope(self, client: HubmapSearchSDK) -> None:
         with client.add.with_streaming_response.update_document_with_scope(
@@ -713,7 +713,7 @@ class TestAdd:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_update_document_with_scope(self, client: HubmapSearchSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `uuid` but received ''"):
@@ -884,7 +884,7 @@ class TestAsyncAdd:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_create_document(self, async_client: AsyncHubmapSearchSDK) -> None:
         add = await async_client.add.create_document(
@@ -939,7 +939,7 @@ class TestAsyncAdd:
         )
         assert add is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_create_document(self, async_client: AsyncHubmapSearchSDK) -> None:
         response = await async_client.add.with_raw_response.create_document(
@@ -998,7 +998,7 @@ class TestAsyncAdd:
         add = await response.parse()
         assert add is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_create_document(self, async_client: AsyncHubmapSearchSDK) -> None:
         async with async_client.add.with_streaming_response.create_document(
@@ -1059,7 +1059,7 @@ class TestAsyncAdd:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_create_document(self, async_client: AsyncHubmapSearchSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `uuid` but received ''"):
@@ -1114,7 +1114,7 @@ class TestAsyncAdd:
                 },
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_create_document_with_index(self, async_client: AsyncHubmapSearchSDK) -> None:
         add = await async_client.add.create_document_with_index(
@@ -1170,7 +1170,7 @@ class TestAsyncAdd:
         )
         assert add is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_create_document_with_index(self, async_client: AsyncHubmapSearchSDK) -> None:
         response = await async_client.add.with_raw_response.create_document_with_index(
@@ -1230,7 +1230,7 @@ class TestAsyncAdd:
         add = await response.parse()
         assert add is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_create_document_with_index(self, async_client: AsyncHubmapSearchSDK) -> None:
         async with async_client.add.with_streaming_response.create_document_with_index(
@@ -1292,7 +1292,7 @@ class TestAsyncAdd:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_create_document_with_index(self, async_client: AsyncHubmapSearchSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `uuid` but received ''"):
@@ -1401,7 +1401,7 @@ class TestAsyncAdd:
                 },
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_update_document_with_scope(self, async_client: AsyncHubmapSearchSDK) -> None:
         add = await async_client.add.update_document_with_scope(
@@ -1458,7 +1458,7 @@ class TestAsyncAdd:
         )
         assert add is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_update_document_with_scope(self, async_client: AsyncHubmapSearchSDK) -> None:
         response = await async_client.add.with_raw_response.update_document_with_scope(
@@ -1519,7 +1519,7 @@ class TestAsyncAdd:
         add = await response.parse()
         assert add is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_update_document_with_scope(self, async_client: AsyncHubmapSearchSDK) -> None:
         async with async_client.add.with_streaming_response.update_document_with_scope(
@@ -1582,7 +1582,7 @@ class TestAsyncAdd:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_update_document_with_scope(self, async_client: AsyncHubmapSearchSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `uuid` but received ''"):

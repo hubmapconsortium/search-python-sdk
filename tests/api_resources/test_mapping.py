@@ -16,13 +16,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestMapping:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_retrieve_default(self, client: HubmapSearchSDK) -> None:
         mapping = client.mapping.retrieve_default()
         assert_matches_type(object, mapping, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_retrieve_default(self, client: HubmapSearchSDK) -> None:
         response = client.mapping.with_raw_response.retrieve_default()
@@ -32,7 +32,7 @@ class TestMapping:
         mapping = response.parse()
         assert_matches_type(object, mapping, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_default(self, client: HubmapSearchSDK) -> None:
         with client.mapping.with_streaming_response.retrieve_default() as response:
@@ -44,7 +44,7 @@ class TestMapping:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_retrieve_index(self, client: HubmapSearchSDK) -> None:
         mapping = client.mapping.retrieve_index(
@@ -52,7 +52,7 @@ class TestMapping:
         )
         assert_matches_type(object, mapping, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_retrieve_index(self, client: HubmapSearchSDK) -> None:
         response = client.mapping.with_raw_response.retrieve_index(
@@ -64,7 +64,7 @@ class TestMapping:
         mapping = response.parse()
         assert_matches_type(object, mapping, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_index(self, client: HubmapSearchSDK) -> None:
         with client.mapping.with_streaming_response.retrieve_index(
@@ -78,7 +78,7 @@ class TestMapping:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_retrieve_index(self, client: HubmapSearchSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `index_name` but received ''"):
@@ -92,13 +92,13 @@ class TestAsyncMapping:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_retrieve_default(self, async_client: AsyncHubmapSearchSDK) -> None:
         mapping = await async_client.mapping.retrieve_default()
         assert_matches_type(object, mapping, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_default(self, async_client: AsyncHubmapSearchSDK) -> None:
         response = await async_client.mapping.with_raw_response.retrieve_default()
@@ -108,7 +108,7 @@ class TestAsyncMapping:
         mapping = await response.parse()
         assert_matches_type(object, mapping, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_default(self, async_client: AsyncHubmapSearchSDK) -> None:
         async with async_client.mapping.with_streaming_response.retrieve_default() as response:
@@ -120,7 +120,7 @@ class TestAsyncMapping:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_retrieve_index(self, async_client: AsyncHubmapSearchSDK) -> None:
         mapping = await async_client.mapping.retrieve_index(
@@ -128,7 +128,7 @@ class TestAsyncMapping:
         )
         assert_matches_type(object, mapping, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_index(self, async_client: AsyncHubmapSearchSDK) -> None:
         response = await async_client.mapping.with_raw_response.retrieve_index(
@@ -140,7 +140,7 @@ class TestAsyncMapping:
         mapping = await response.parse()
         assert_matches_type(object, mapping, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_index(self, async_client: AsyncHubmapSearchSDK) -> None:
         async with async_client.mapping.with_streaming_response.retrieve_index(
@@ -154,7 +154,7 @@ class TestAsyncMapping:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_retrieve_index(self, async_client: AsyncHubmapSearchSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `index_name` but received ''"):
