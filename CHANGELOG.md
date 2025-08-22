@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.26 (2025-08-22)
+
+Full Changelog: [v1.0.0-alpha.25...v1.0.0-alpha.26](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.25...v1.0.0-alpha.26)
+
+### Chores
+
+* update github action ([f9ff4f3](https://github.com/hubmapconsortium/search-python-sdk/commit/f9ff4f33581bc0f10b4ecab07681b13e4214ac4f))
+
 ## 1.0.0-alpha.25 (2025-08-13)
 
 Full Changelog: [v1.0.0-alpha.24...v1.0.0-alpha.25](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.24...v1.0.0-alpha.25)
