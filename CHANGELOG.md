@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.27 (2025-08-26)
+
+Full Changelog: [v1.0.0-alpha.26...v1.0.0-alpha.27](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.26...v1.0.0-alpha.27)
+
+### Chores
+
+* **internal:** change ci workflow machines ([47a4085](https://github.com/hubmapconsortium/search-python-sdk/commit/47a40858c891b2a2ec4f417f6bbb72cb447741ce))
+
 ## 1.0.0-alpha.26 (2025-08-22)
 
 Full Changelog: [v1.0.0-alpha.25...v1.0.0-alpha.26](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.25...v1.0.0-alpha.26)
