@@ -1,6 +1,6 @@
 [project]
 name = "hubmap_search_sdk"
-version = "1.0.0-alpha.27"
+version = "1.0.0-alpha.28"
 description = "The official Python library for the hubmap-search-sdk API"
 dynamic = ["readme"]
 license = "MIT"
@@ -148,6 +148,7 @@ exclude = [
     "_dev",
     ".venv",
     ".nox",
+    ".git",
 ]
 
 reportImplicitOverride = true

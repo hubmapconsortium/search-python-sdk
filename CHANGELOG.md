@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.0.0-alpha.28 (2025-08-27)
+
+Full Changelog: [v1.0.0-alpha.27...v1.0.0-alpha.28](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.27...v1.0.0-alpha.28)
+
+### Bug Fixes
+
+* avoid newer type syntax ([b385bd1](https://github.com/hubmapconsortium/search-python-sdk/commit/b385bd1670a33d086f2a95b7dc72d38afe7ede69))
+
+
+### Chores
+
+* **internal:** update pyright exclude list ([93a0b9d](https://github.com/hubmapconsortium/search-python-sdk/commit/93a0b9d32ef423a65b9be4d99012a41b0a3071cc))
+
 ## 1.0.0-alpha.27 (2025-08-26)
 
 Full Changelog: [v1.0.0-alpha.26...v1.0.0-alpha.27](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.26...v1.0.0-alpha.27)
