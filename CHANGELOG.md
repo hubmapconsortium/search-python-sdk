@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.29 (2025-08-30)
+
+Full Changelog: [v1.0.0-alpha.28...v1.0.0-alpha.29](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.28...v1.0.0-alpha.29)
+
+### Chores
+
+* **internal:** add Sequence related utils ([469d828](https://github.com/hubmapconsortium/search-python-sdk/commit/469d8285de4669954c21a3ae99b6b3dcecf4db74))
+
 ## 1.0.0-alpha.28 (2025-08-27)
 
 Full Changelog: [v1.0.0-alpha.27...v1.0.0-alpha.28](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.27...v1.0.0-alpha.28)
