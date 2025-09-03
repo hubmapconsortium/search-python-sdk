@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.30 (2025-09-03)
+
+Full Changelog: [v1.0.0-alpha.29...v1.0.0-alpha.30](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.29...v1.0.0-alpha.30)
+
+### Features
+
+* **types:** replace List[str] with SequenceNotStr in params ([7da1d10](https://github.com/hubmapconsortium/search-python-sdk/commit/7da1d10388b1da82efd3eeae1d39695fe4e35126))
+
 ## 1.0.0-alpha.29 (2025-08-30)
 
 Full Changelog: [v1.0.0-alpha.28...v1.0.0-alpha.29](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.28...v1.0.0-alpha.29)
