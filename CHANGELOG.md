@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.0.0-alpha.31 (2025-09-05)
+
+Full Changelog: [v1.0.0-alpha.30...v1.0.0-alpha.31](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.30...v1.0.0-alpha.31)
+
+### Features
+
+* improve future compat with pydantic v3 ([67de03d](https://github.com/hubmapconsortium/search-python-sdk/commit/67de03d9189def6bbf37461c53bd79b537155f41))
+
+
+### Chores
+
+* **internal:** move mypy configurations to `pyproject.toml` file ([4dfc2a4](https://github.com/hubmapconsortium/search-python-sdk/commit/4dfc2a448ed04786a5da3ef2069f99f137b3ea34))
+
 ## 1.0.0-alpha.30 (2025-09-03)
 
 Full Changelog: [v1.0.0-alpha.29...v1.0.0-alpha.30](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.29...v1.0.0-alpha.30)
