@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.32 (2025-09-06)
+
+Full Changelog: [v1.0.0-alpha.31...v1.0.0-alpha.32](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.31...v1.0.0-alpha.32)
+
+### Chores
+
+* **tests:** simplify `get_platform` test ([89ae7aa](https://github.com/hubmapconsortium/search-python-sdk/commit/89ae7aa0058e9f55e428b21f5e24915ba4941441))
+
 ## 1.0.0-alpha.31 (2025-09-05)
 
 Full Changelog: [v1.0.0-alpha.30...v1.0.0-alpha.31](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.30...v1.0.0-alpha.31)
