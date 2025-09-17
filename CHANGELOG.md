@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.33 (2025-09-17)
+
+Full Changelog: [v1.0.0-alpha.32...v1.0.0-alpha.33](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.32...v1.0.0-alpha.33)
+
+### Chores
+
+* **internal:** update pydantic dependency ([02397ba](https://github.com/hubmapconsortium/search-python-sdk/commit/02397bae9ddeaec7142720662e79397acba7a919))
+
 ## 1.0.0-alpha.32 (2025-09-06)
 
 Full Changelog: [v1.0.0-alpha.31...v1.0.0-alpha.32](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.31...v1.0.0-alpha.32)
