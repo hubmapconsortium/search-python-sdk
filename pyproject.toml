@@ -1,6 +1,6 @@
 [project]
 name = "hubmap_search_sdk"
-version = "1.0.0-alpha.32"
+version = "1.0.0-alpha.33"
 description = "The official Python library for the hubmap-search-sdk API"
 dynamic = ["readme"]
 license = "MIT"
