@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.0-alpha.34 (2025-09-20)
+
+Full Changelog: [v1.0.0-alpha.33...v1.0.0-alpha.34](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.33...v1.0.0-alpha.34)
+
+### Chores
+
+* do not install brew dependencies in ./scripts/bootstrap by default ([1ac8e1f](https://github.com/hubmapconsortium/search-python-sdk/commit/1ac8e1f01b04dfdde272b9fbe5010cd0be61b53f))
+* **types:** change optional parameter type from NotGiven to Omit ([93de837](https://github.com/hubmapconsortium/search-python-sdk/commit/93de8370c188e04899fb9775ab94860fad94278d))
+
 ## 1.0.0-alpha.33 (2025-09-17)
 
 Full Changelog: [v1.0.0-alpha.32...v1.0.0-alpha.33](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.32...v1.0.0-alpha.33)
