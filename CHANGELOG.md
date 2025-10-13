@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.35 (2025-10-11)
+
+Full Changelog: [v1.0.0-alpha.34...v1.0.0-alpha.35](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.34...v1.0.0-alpha.35)
+
+### Chores
+
+* **internal:** detect missing future annotations with ruff ([a74aba0](https://github.com/hubmapconsortium/search-python-sdk/commit/a74aba062425f278329a95c8f18b53df72da9075))
+
 ## 1.0.0-alpha.34 (2025-09-20)
 
 Full Changelog: [v1.0.0-alpha.33...v1.0.0-alpha.34](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.33...v1.0.0-alpha.34)
