@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.36 (2025-10-18)
+
+Full Changelog: [v1.0.0-alpha.35...v1.0.0-alpha.36](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.35...v1.0.0-alpha.36)
+
+### Chores
+
+* bump `httpx-aiohttp` version to 0.1.9 ([aada61d](https://github.com/hubmapconsortium/search-python-sdk/commit/aada61df8f20fa736fb3b4e8648a1caf2d68edc4))
+
 ## 1.0.0-alpha.35 (2025-10-11)
 
 Full Changelog: [v1.0.0-alpha.34...v1.0.0-alpha.35](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.34...v1.0.0-alpha.35)
