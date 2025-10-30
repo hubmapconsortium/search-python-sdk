@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.37 (2025-10-30)
+
+Full Changelog: [v1.0.0-alpha.36...v1.0.0-alpha.37](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.36...v1.0.0-alpha.37)
+
+### Bug Fixes
+
+* **client:** close streams without requiring full consumption ([16b30a2](https://github.com/hubmapconsortium/search-python-sdk/commit/16b30a23bf54daf97ef4792fe6b58d0e75695ef0))
+
 ## 1.0.0-alpha.36 (2025-10-18)
 
 Full Changelog: [v1.0.0-alpha.35...v1.0.0-alpha.36](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.35...v1.0.0-alpha.36)
