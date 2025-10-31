@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-alpha.38 (2025-10-31)
+
+Full Changelog: [v1.0.0-alpha.37...v1.0.0-alpha.38](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.37...v1.0.0-alpha.38)
+
+### Chores
+
+* **internal/tests:** avoid race condition with implicit client cleanup ([079b6ae](https://github.com/hubmapconsortium/search-python-sdk/commit/079b6ae64ae6d1c1f09310228bb50b574a2c18e9))
+
 ## 1.0.0-alpha.37 (2025-10-30)
 
 Full Changelog: [v1.0.0-alpha.36...v1.0.0-alpha.37](https://github.com/hubmapconsortium/search-python-sdk/compare/v1.0.0-alpha.36...v1.0.0-alpha.37)
