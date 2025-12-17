@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import os
-from typing import Any, Mapping
+from typing import TYPE_CHECKING, Any, Mapping
 from typing_extensions import Self, override
 
 import httpx
@@ -20,8 +20,8 @@ from ._types import (
     not_given,
 )
 from ._utils import is_given, get_async_library
+from ._compat import cached_property
 from ._version import __version__
-from .resources import add, mget, search, update, indices, mapping, reindex, clear_docs, param_search, scroll_search
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import APIStatusError
 from ._base_client import (
@@ -29,6 +29,19 @@ from ._base_client import (
     SyncAPIClient,
     AsyncAPIClient,
 )
+
+if TYPE_CHECKING:
+    from .resources import add, mget, search, update, indices, mapping, reindex, clear_docs, param_search, scroll_search
+    from .resources.add import AddResource, AsyncAddResource
+    from .resources.mget import MgetResource, AsyncMgetResource
+    from .resources.search import SearchResource, AsyncSearchResource
+    from .resources.update import UpdateResource, AsyncUpdateResource
+    from .resources.indices import IndicesResource, AsyncIndicesResource
+    from .resources.mapping import MappingResource, AsyncMappingResource
+    from .resources.reindex import ReindexResource, AsyncReindexResource
+    from .resources.clear_docs import ClearDocsResource, AsyncClearDocsResource
+    from .resources.param_search import ParamSearchResource, AsyncParamSearchResource
+    from .resources.scroll_search import ScrollSearchResource, AsyncScrollSearchResource
 
 __all__ = [
     "Timeout",
@@ -43,19 +56,6 @@ __all__ = [
 
 
 class HubmapSearchSDK(SyncAPIClient):
-    indices: indices.IndicesResource
-    search: search.SearchResource
-    param_search: param_search.ParamSearchResource
-    reindex: reindex.ReindexResource
-    mget: mget.MgetResource
-    mapping: mapping.MappingResource
-    update: update.UpdateResource
-    add: add.AddResource
-    clear_docs: clear_docs.ClearDocsResource
-    scroll_search: scroll_search.ScrollSearchResource
-    with_raw_response: HubmapSearchSDKWithRawResponse
-    with_streaming_response: HubmapSearchSDKWithStreamedResponse
-
     # client options
     bearer_token: str | None
 
@@ -101,18 +101,73 @@ class HubmapSearchSDK(SyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.indices = indices.IndicesResource(self)
-        self.search = search.SearchResource(self)
-        self.param_search = param_search.ParamSearchResource(self)
-        self.reindex = reindex.ReindexResource(self)
-        self.mget = mget.MgetResource(self)
-        self.mapping = mapping.MappingResource(self)
-        self.update = update.UpdateResource(self)
-        self.add = add.AddResource(self)
-        self.clear_docs = clear_docs.ClearDocsResource(self)
-        self.scroll_search = scroll_search.ScrollSearchResource(self)
-        self.with_raw_response = HubmapSearchSDKWithRawResponse(self)
-        self.with_streaming_response = HubmapSearchSDKWithStreamedResponse(self)
+    @cached_property
+    def indices(self) -> IndicesResource:
+        from .resources.indices import IndicesResource
+
+        return IndicesResource(self)
+
+    @cached_property
+    def search(self) -> SearchResource:
+        from .resources.search import SearchResource
+
+        return SearchResource(self)
+
+    @cached_property
+    def param_search(self) -> ParamSearchResource:
+        from .resources.param_search import ParamSearchResource
+
+        return ParamSearchResource(self)
+
+    @cached_property
+    def reindex(self) -> ReindexResource:
+        from .resources.reindex import ReindexResource
+
+        return ReindexResource(self)
+
+    @cached_property
+    def mget(self) -> MgetResource:
+        from .resources.mget import MgetResource
+
+        return MgetResource(self)
+
+    @cached_property
+    def mapping(self) -> MappingResource:
+        from .resources.mapping import MappingResource
+
+        return MappingResource(self)
+
+    @cached_property
+    def update(self) -> UpdateResource:
+        from .resources.update import UpdateResource
+
+        return UpdateResource(self)
+
+    @cached_property
+    def add(self) -> AddResource:
+        from .resources.add import AddResource
+
+        return AddResource(self)
+
+    @cached_property
+    def clear_docs(self) -> ClearDocsResource:
+        from .resources.clear_docs import ClearDocsResource
+
+        return ClearDocsResource(self)
+
+    @cached_property
+    def scroll_search(self) -> ScrollSearchResource:
+        from .resources.scroll_search import ScrollSearchResource
+
+        return ScrollSearchResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> HubmapSearchSDKWithRawResponse:
+        return HubmapSearchSDKWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> HubmapSearchSDKWithStreamedResponse:
+        return HubmapSearchSDKWithStreamedResponse(self)
 
     @property
     @override
@@ -222,19 +277,6 @@ class HubmapSearchSDK(SyncAPIClient):
 
 
 class AsyncHubmapSearchSDK(AsyncAPIClient):
-    indices: indices.AsyncIndicesResource
-    search: search.AsyncSearchResource
-    param_search: param_search.AsyncParamSearchResource
-    reindex: reindex.AsyncReindexResource
-    mget: mget.AsyncMgetResource
-    mapping: mapping.AsyncMappingResource
-    update: update.AsyncUpdateResource
-    add: add.AsyncAddResource
-    clear_docs: clear_docs.AsyncClearDocsResource
-    scroll_search: scroll_search.AsyncScrollSearchResource
-    with_raw_response: AsyncHubmapSearchSDKWithRawResponse
-    with_streaming_response: AsyncHubmapSearchSDKWithStreamedResponse
-
     # client options
     bearer_token: str | None
 
@@ -280,18 +322,73 @@ class AsyncHubmapSearchSDK(AsyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.indices = indices.AsyncIndicesResource(self)
-        self.search = search.AsyncSearchResource(self)
-        self.param_search = param_search.AsyncParamSearchResource(self)
-        self.reindex = reindex.AsyncReindexResource(self)
-        self.mget = mget.AsyncMgetResource(self)
-        self.mapping = mapping.AsyncMappingResource(self)
-        self.update = update.AsyncUpdateResource(self)
-        self.add = add.AsyncAddResource(self)
-        self.clear_docs = clear_docs.AsyncClearDocsResource(self)
-        self.scroll_search = scroll_search.AsyncScrollSearchResource(self)
-        self.with_raw_response = AsyncHubmapSearchSDKWithRawResponse(self)
-        self.with_streaming_response = AsyncHubmapSearchSDKWithStreamedResponse(self)
+    @cached_property
+    def indices(self) -> AsyncIndicesResource:
+        from .resources.indices import AsyncIndicesResource
+
+        return AsyncIndicesResource(self)
+
+    @cached_property
+    def search(self) -> AsyncSearchResource:
+        from .resources.search import AsyncSearchResource
+
+        return AsyncSearchResource(self)
+
+    @cached_property
+    def param_search(self) -> AsyncParamSearchResource:
+        from .resources.param_search import AsyncParamSearchResource
+
+        return AsyncParamSearchResource(self)
+
+    @cached_property
+    def reindex(self) -> AsyncReindexResource:
+        from .resources.reindex import AsyncReindexResource
+
+        return AsyncReindexResource(self)
+
+    @cached_property
+    def mget(self) -> AsyncMgetResource:
+        from .resources.mget import AsyncMgetResource
+
+        return AsyncMgetResource(self)
+
+    @cached_property
+    def mapping(self) -> AsyncMappingResource:
+        from .resources.mapping import AsyncMappingResource
+
+        return AsyncMappingResource(self)
+
+    @cached_property
+    def update(self) -> AsyncUpdateResource:
+        from .resources.update import AsyncUpdateResource
+
+        return AsyncUpdateResource(self)
+
+    @cached_property
+    def add(self) -> AsyncAddResource:
+        from .resources.add import AsyncAddResource
+
+        return AsyncAddResource(self)
+
+    @cached_property
+    def clear_docs(self) -> AsyncClearDocsResource:
+        from .resources.clear_docs import AsyncClearDocsResource
+
+        return AsyncClearDocsResource(self)
+
+    @cached_property
+    def scroll_search(self) -> AsyncScrollSearchResource:
+        from .resources.scroll_search import AsyncScrollSearchResource
+
+        return AsyncScrollSearchResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> AsyncHubmapSearchSDKWithRawResponse:
+        return AsyncHubmapSearchSDKWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> AsyncHubmapSearchSDKWithStreamedResponse:
+        return AsyncHubmapSearchSDKWithStreamedResponse(self)
 
     @property
     @override
@@ -401,59 +498,271 @@ class AsyncHubmapSearchSDK(AsyncAPIClient):
 
 
 class HubmapSearchSDKWithRawResponse:
+    _client: HubmapSearchSDK
+
     def __init__(self, client: HubmapSearchSDK) -> None:
-        self.indices = indices.IndicesResourceWithRawResponse(client.indices)
-        self.search = search.SearchResourceWithRawResponse(client.search)
-        self.param_search = param_search.ParamSearchResourceWithRawResponse(client.param_search)
-        self.reindex = reindex.ReindexResourceWithRawResponse(client.reindex)
-        self.mget = mget.MgetResourceWithRawResponse(client.mget)
-        self.mapping = mapping.MappingResourceWithRawResponse(client.mapping)
-        self.update = update.UpdateResourceWithRawResponse(client.update)
-        self.add = add.AddResourceWithRawResponse(client.add)
-        self.clear_docs = clear_docs.ClearDocsResourceWithRawResponse(client.clear_docs)
-        self.scroll_search = scroll_search.ScrollSearchResourceWithRawResponse(client.scroll_search)
+        self._client = client
+
+    @cached_property
+    def indices(self) -> indices.IndicesResourceWithRawResponse:
+        from .resources.indices import IndicesResourceWithRawResponse
+
+        return IndicesResourceWithRawResponse(self._client.indices)
+
+    @cached_property
+    def search(self) -> search.SearchResourceWithRawResponse:
+        from .resources.search import SearchResourceWithRawResponse
+
+        return SearchResourceWithRawResponse(self._client.search)
+
+    @cached_property
+    def param_search(self) -> param_search.ParamSearchResourceWithRawResponse:
+        from .resources.param_search import ParamSearchResourceWithRawResponse
+
+        return ParamSearchResourceWithRawResponse(self._client.param_search)
+
+    @cached_property
+    def reindex(self) -> reindex.ReindexResourceWithRawResponse:
+        from .resources.reindex import ReindexResourceWithRawResponse
+
+        return ReindexResourceWithRawResponse(self._client.reindex)
+
+    @cached_property
+    def mget(self) -> mget.MgetResourceWithRawResponse:
+        from .resources.mget import MgetResourceWithRawResponse
+
+        return MgetResourceWithRawResponse(self._client.mget)
+
+    @cached_property
+    def mapping(self) -> mapping.MappingResourceWithRawResponse:
+        from .resources.mapping import MappingResourceWithRawResponse
+
+        return MappingResourceWithRawResponse(self._client.mapping)
+
+    @cached_property
+    def update(self) -> update.UpdateResourceWithRawResponse:
+        from .resources.update import UpdateResourceWithRawResponse
+
+        return UpdateResourceWithRawResponse(self._client.update)
+
+    @cached_property
+    def add(self) -> add.AddResourceWithRawResponse:
+        from .resources.add import AddResourceWithRawResponse
+
+        return AddResourceWithRawResponse(self._client.add)
+
+    @cached_property
+    def clear_docs(self) -> clear_docs.ClearDocsResourceWithRawResponse:
+        from .resources.clear_docs import ClearDocsResourceWithRawResponse
+
+        return ClearDocsResourceWithRawResponse(self._client.clear_docs)
+
+    @cached_property
+    def scroll_search(self) -> scroll_search.ScrollSearchResourceWithRawResponse:
+        from .resources.scroll_search import ScrollSearchResourceWithRawResponse
+
+        return ScrollSearchResourceWithRawResponse(self._client.scroll_search)
 
 
 class AsyncHubmapSearchSDKWithRawResponse:
+    _client: AsyncHubmapSearchSDK
+
     def __init__(self, client: AsyncHubmapSearchSDK) -> None:
-        self.indices = indices.AsyncIndicesResourceWithRawResponse(client.indices)
-        self.search = search.AsyncSearchResourceWithRawResponse(client.search)
-        self.param_search = param_search.AsyncParamSearchResourceWithRawResponse(client.param_search)
-        self.reindex = reindex.AsyncReindexResourceWithRawResponse(client.reindex)
-        self.mget = mget.AsyncMgetResourceWithRawResponse(client.mget)
-        self.mapping = mapping.AsyncMappingResourceWithRawResponse(client.mapping)
-        self.update = update.AsyncUpdateResourceWithRawResponse(client.update)
-        self.add = add.AsyncAddResourceWithRawResponse(client.add)
-        self.clear_docs = clear_docs.AsyncClearDocsResourceWithRawResponse(client.clear_docs)
-        self.scroll_search = scroll_search.AsyncScrollSearchResourceWithRawResponse(client.scroll_search)
+        self._client = client
+
+    @cached_property
+    def indices(self) -> indices.AsyncIndicesResourceWithRawResponse:
+        from .resources.indices import AsyncIndicesResourceWithRawResponse
+
+        return AsyncIndicesResourceWithRawResponse(self._client.indices)
+
+    @cached_property
+    def search(self) -> search.AsyncSearchResourceWithRawResponse:
+        from .resources.search import AsyncSearchResourceWithRawResponse
+
+        return AsyncSearchResourceWithRawResponse(self._client.search)
+
+    @cached_property
+    def param_search(self) -> param_search.AsyncParamSearchResourceWithRawResponse:
+        from .resources.param_search import AsyncParamSearchResourceWithRawResponse
+
+        return AsyncParamSearchResourceWithRawResponse(self._client.param_search)
+
+    @cached_property
+    def reindex(self) -> reindex.AsyncReindexResourceWithRawResponse:
+        from .resources.reindex import AsyncReindexResourceWithRawResponse
+
+        return AsyncReindexResourceWithRawResponse(self._client.reindex)
+
+    @cached_property
+    def mget(self) -> mget.AsyncMgetResourceWithRawResponse:
+        from .resources.mget import AsyncMgetResourceWithRawResponse
+
+        return AsyncMgetResourceWithRawResponse(self._client.mget)
+
+    @cached_property
+    def mapping(self) -> mapping.AsyncMappingResourceWithRawResponse:
+        from .resources.mapping import AsyncMappingResourceWithRawResponse
+
+        return AsyncMappingResourceWithRawResponse(self._client.mapping)
+
+    @cached_property
+    def update(self) -> update.AsyncUpdateResourceWithRawResponse:
+        from .resources.update import AsyncUpdateResourceWithRawResponse
+
+        return AsyncUpdateResourceWithRawResponse(self._client.update)
+
+    @cached_property
+    def add(self) -> add.AsyncAddResourceWithRawResponse:
+        from .resources.add import AsyncAddResourceWithRawResponse
+
+        return AsyncAddResourceWithRawResponse(self._client.add)
+
+    @cached_property
+    def clear_docs(self) -> clear_docs.AsyncClearDocsResourceWithRawResponse:
+        from .resources.clear_docs import AsyncClearDocsResourceWithRawResponse
+
+        return AsyncClearDocsResourceWithRawResponse(self._client.clear_docs)
+
+    @cached_property
+    def scroll_search(self) -> scroll_search.AsyncScrollSearchResourceWithRawResponse:
+        from .resources.scroll_search import AsyncScrollSearchResourceWithRawResponse
+
+        return AsyncScrollSearchResourceWithRawResponse(self._client.scroll_search)
 
 
 class HubmapSearchSDKWithStreamedResponse:
+    _client: HubmapSearchSDK
+
     def __init__(self, client: HubmapSearchSDK) -> None:
-        self.indices = indices.IndicesResourceWithStreamingResponse(client.indices)
-        self.search = search.SearchResourceWithStreamingResponse(client.search)
-        self.param_search = param_search.ParamSearchResourceWithStreamingResponse(client.param_search)
-        self.reindex = reindex.ReindexResourceWithStreamingResponse(client.reindex)
-        self.mget = mget.MgetResourceWithStreamingResponse(client.mget)
-        self.mapping = mapping.MappingResourceWithStreamingResponse(client.mapping)
-        self.update = update.UpdateResourceWithStreamingResponse(client.update)
-        self.add = add.AddResourceWithStreamingResponse(client.add)
-        self.clear_docs = clear_docs.ClearDocsResourceWithStreamingResponse(client.clear_docs)
-        self.scroll_search = scroll_search.ScrollSearchResourceWithStreamingResponse(client.scroll_search)
+        self._client = client
+
+    @cached_property
+    def indices(self) -> indices.IndicesResourceWithStreamingResponse:
+        from .resources.indices import IndicesResourceWithStreamingResponse
+
+        return IndicesResourceWithStreamingResponse(self._client.indices)
+
+    @cached_property
+    def search(self) -> search.SearchResourceWithStreamingResponse:
+        from .resources.search import SearchResourceWithStreamingResponse
+
+        return SearchResourceWithStreamingResponse(self._client.search)
+
+    @cached_property
+    def param_search(self) -> param_search.ParamSearchResourceWithStreamingResponse:
+        from .resources.param_search import ParamSearchResourceWithStreamingResponse
+
+        return ParamSearchResourceWithStreamingResponse(self._client.param_search)
+
+    @cached_property
+    def reindex(self) -> reindex.ReindexResourceWithStreamingResponse:
+        from .resources.reindex import ReindexResourceWithStreamingResponse
+
+        return ReindexResourceWithStreamingResponse(self._client.reindex)
+
+    @cached_property
+    def mget(self) -> mget.MgetResourceWithStreamingResponse:
+        from .resources.mget import MgetResourceWithStreamingResponse
+
+        return MgetResourceWithStreamingResponse(self._client.mget)
+
+    @cached_property
+    def mapping(self) -> mapping.MappingResourceWithStreamingResponse:
+        from .resources.mapping import MappingResourceWithStreamingResponse
+
+        return MappingResourceWithStreamingResponse(self._client.mapping)
+
+    @cached_property
+    def update(self) -> update.UpdateResourceWithStreamingResponse:
+        from .resources.update import UpdateResourceWithStreamingResponse
+
+        return UpdateResourceWithStreamingResponse(self._client.update)
+
+    @cached_property
+    def add(self) -> add.AddResourceWithStreamingResponse:
+        from .resources.add import AddResourceWithStreamingResponse
+
+        return AddResourceWithStreamingResponse(self._client.add)
+
+    @cached_property
+    def clear_docs(self) -> clear_docs.ClearDocsResourceWithStreamingResponse:
+        from .resources.clear_docs import ClearDocsResourceWithStreamingResponse
+
+        return ClearDocsResourceWithStreamingResponse(self._client.clear_docs)
+
+    @cached_property
+    def scroll_search(self) -> scroll_search.ScrollSearchResourceWithStreamingResponse:
+        from .resources.scroll_search import ScrollSearchResourceWithStreamingResponse
+
+        return ScrollSearchResourceWithStreamingResponse(self._client.scroll_search)
 
 
 class AsyncHubmapSearchSDKWithStreamedResponse:
+    _client: AsyncHubmapSearchSDK
+
     def __init__(self, client: AsyncHubmapSearchSDK) -> None:
-        self.indices = indices.AsyncIndicesResourceWithStreamingResponse(client.indices)
-        self.search = search.AsyncSearchResourceWithStreamingResponse(client.search)
-        self.param_search = param_search.AsyncParamSearchResourceWithStreamingResponse(client.param_search)
-        self.reindex = reindex.AsyncReindexResourceWithStreamingResponse(client.reindex)
-        self.mget = mget.AsyncMgetResourceWithStreamingResponse(client.mget)
-        self.mapping = mapping.AsyncMappingResourceWithStreamingResponse(client.mapping)
-        self.update = update.AsyncUpdateResourceWithStreamingResponse(client.update)
-        self.add = add.AsyncAddResourceWithStreamingResponse(client.add)
-        self.clear_docs = clear_docs.AsyncClearDocsResourceWithStreamingResponse(client.clear_docs)
-        self.scroll_search = scroll_search.AsyncScrollSearchResourceWithStreamingResponse(client.scroll_search)
+        self._client = client
+
+    @cached_property
+    def indices(self) -> indices.AsyncIndicesResourceWithStreamingResponse:
+        from .resources.indices import AsyncIndicesResourceWithStreamingResponse
+
+        return AsyncIndicesResourceWithStreamingResponse(self._client.indices)
+
+    @cached_property
+    def search(self) -> search.AsyncSearchResourceWithStreamingResponse:
+        from .resources.search import AsyncSearchResourceWithStreamingResponse
+
+        return AsyncSearchResourceWithStreamingResponse(self._client.search)
+
+    @cached_property
+    def param_search(self) -> param_search.AsyncParamSearchResourceWithStreamingResponse:
+        from .resources.param_search import AsyncParamSearchResourceWithStreamingResponse
+
+        return AsyncParamSearchResourceWithStreamingResponse(self._client.param_search)
+
+    @cached_property
+    def reindex(self) -> reindex.AsyncReindexResourceWithStreamingResponse:
+        from .resources.reindex import AsyncReindexResourceWithStreamingResponse
+
+        return AsyncReindexResourceWithStreamingResponse(self._client.reindex)
+
+    @cached_property
+    def mget(self) -> mget.AsyncMgetResourceWithStreamingResponse:
+        from .resources.mget import AsyncMgetResourceWithStreamingResponse
+
+        return AsyncMgetResourceWithStreamingResponse(self._client.mget)
+
+    @cached_property
+    def mapping(self) -> mapping.AsyncMappingResourceWithStreamingResponse:
+        from .resources.mapping import AsyncMappingResourceWithStreamingResponse
+
+        return AsyncMappingResourceWithStreamingResponse(self._client.mapping)
+
+    @cached_property
+    def update(self) -> update.AsyncUpdateResourceWithStreamingResponse:
+        from .resources.update import AsyncUpdateResourceWithStreamingResponse
+
+        return AsyncUpdateResourceWithStreamingResponse(self._client.update)
+
+    @cached_property
+    def add(self) -> add.AsyncAddResourceWithStreamingResponse:
+        from .resources.add import AsyncAddResourceWithStreamingResponse
+
+        return AsyncAddResourceWithStreamingResponse(self._client.add)
+
+    @cached_property
+    def clear_docs(self) -> clear_docs.AsyncClearDocsResourceWithStreamingResponse:
+        from .resources.clear_docs import AsyncClearDocsResourceWithStreamingResponse
+
+        return AsyncClearDocsResourceWithStreamingResponse(self._client.clear_docs)
+
+    @cached_property
+    def scroll_search(self) -> scroll_search.AsyncScrollSearchResourceWithStreamingResponse:
+        from .resources.scroll_search import AsyncScrollSearchResourceWithStreamingResponse
+
+        return AsyncScrollSearchResourceWithStreamingResponse(self._client.scroll_search)
 
 
 Client = HubmapSearchSDK
